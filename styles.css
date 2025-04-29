@@ -1,4 +1,4 @@
-/* Global Styles */
+/* Global */
 * {
     margin: 0;
     padding: 0;
@@ -12,7 +12,7 @@ body {
     line-height: 1.6;
 }
 
-/* Header Styles */
+/* Header */
 header {
     display: flex;
     justify-content: space-between;
@@ -23,13 +23,13 @@ header {
 }
 
 header .logo img {
-    height: 48px; /* Ajustez la taille du logo */
+    height: 48px;
 }
 
 nav ul {
     display: flex;
     gap: 50px;
-    list-style: none; /* Retirer les puces (bullet points) */
+    list-style: none;
 }
 
 nav a {
@@ -49,15 +49,19 @@ nav a:hover {
     gap: 20px;
 }
 
-.connect-btn {
+.connect-btn,
+.join-btn {
     padding: 10px 20px;
-    background-color: #A7A3FF;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 1rem;
     transition: background-color 0.3s ease;
+}
+
+.connect-btn {
+    background-color: #A7A3FF;
 }
 
 .connect-btn:hover {
@@ -65,14 +69,7 @@ nav a:hover {
 }
 
 .join-btn {
-    padding: 10px 20px;
     background-color: #4D47C3;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.3s ease;
 }
 
 .join-btn:hover {
@@ -95,13 +92,15 @@ nav a:hover {
 }
 
 .hero h1 {
-    font-size: 3rem;
+    font-size: 3.5rem;
     margin-bottom: 20px;
+    font-weight: 700;
 }
 
 .hero p {
     font-size: 1.25rem;
     margin-bottom: 30px;
+    color: #E2E0FF;
 }
 
 .cta-buttons {
@@ -110,21 +109,23 @@ nav a:hover {
 }
 
 .cta-btn {
-    padding: 12px 25px;
+    padding: 14px 30px;
     font-size: 1rem;
+    font-weight: 600;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 8px;
     border: none;
-    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
 }
 
 .primary-btn {
-    background-color: #6D57FC;
+    background-color: #4D47C3;
     color: white;
 }
 
 .primary-btn:hover {
-    background-color: #4D47C3;
+    background-color: #6D57FC;
 }
 
 .secondary-btn {
@@ -136,8 +137,341 @@ nav a:hover {
     background-color: #6D57FC;
 }
 
-/* Hero Image */
+/* Hero image */
 .hero-image img {
-    width: 400px;
+    width: 420px;
     height: auto;
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+
+/* Application Section */
+.application {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 100px 50px;
+    background-color: #F0EFFF;
+    gap: 60px;
+    flex-wrap: wrap;
+    background-color: white;
+}
+
+.application-content {
+    flex: 1;
+    min-width: 300px;
+    max-width: 50%;
+}
+
+.application h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #0C0A1C;
+}
+
+.application p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: #4A4A68;
+}
+
+.application a.learn-more {
+    font-size: 1rem;
+    color: #6D57FC;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.application-image {
+    position: relative;
+    flex: 1;
+    max-width: 50%;
+}
+
+.application-image img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 15px;
+}
+
+
+.section-bar {
+    width: 60px;
+    height: 4px;
+    background-color: #6D57FC;
+    margin-bottom: 20px;
+    border-radius: 2px;
+}
+
+
+/* Section Partenaires */
+.partners {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    padding: 50px 0;
+    background-color: white;
+}
+
+.partner-logo {
+    height: 60px;
+    width: auto;
+}
+
+
+.education {
+    background-color: #FFFFFF;
+    padding: 100px 50px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.education .section-label {
+    color: #6D57FC;
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+    align-self: flex-start;
+}
+
+.education h2 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    color: #0C0A1C;
+    font-weight: bold;
+    align-self: flex-start;
+}
+
+.education .section-subtitle {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 50px;
+    line-height: 1.4;
+    align-self: flex-start;
+}
+
+.education-features {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+/* Blocs violet */
+.feature-box {
+    background-color: #6D57FC;
+    color: white;
+    border-radius: 12px;
+    padding: 30px 20px;
+    width: 220px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+/* Décalage alterné */
+.offset-top {
+    margin-top: -20px;
+}
+.offset-bottom {
+    margin-top: 20px;
+}
+
+.feature-box:hover {
+    transform: translateY(-10px);
+}
+
+.feature-box .icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.feature-box h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.feature-box {
+    background-color: #6D57FC;
+    color: white;
+    border-radius: 12px;
+    padding: 30px 20px;
+    width: 220px;
+    height: 250px; /* <-- fixe une hauteur égale pour tous */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* pour centrer verticalement */
+    align-items: center;
+}
+
+
+/* Quinconce effet */
+.decale-haut {
+    margin-top: -30px;
+}
+
+.decale-bas {
+    margin-top: 30px;
+}
+
+
+@media (max-width: 1024px) {
+    .education-features {
+      justify-content: center;
+      gap: 20px;
+    }
+  
+    .feature-box {
+      width: 45%; /* deux colonnes */
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .feature-box {
+      width: 100%; /* une seule colonne */
+    }
+  
+    .education {
+      padding: 60px 20px;
+    }
+  
+    .education h2,
+    .education .section-label,
+    .education .section-subtitle {
+      text-align: center;
+      align-self: center;
+    }
+  }
+  
+
+  /* Produits Section */
+.products {
+    padding: 100px 50px;
+    background-color: white;
+}
+
+.products .section-label {
+    color: #6D57FC;
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+}
+
+.products h2 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    color: #0C0A1C;
+}
+
+.products .section-subtitle {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 50px;
+    line-height: 1.4;
+}
+
+.product-cards {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.product-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #6D57FC;
+    border-radius: 16px;
+    overflow: hidden;
+    width: 280px;
+    height: 420px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    position: relative;
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+
+.product-card:hover {
+    transform: translateY(-10px);
+}
+
+.product-card img {
+    width: 100%;
+    height: 220px; /* Avant : 180px */
+    object-fit: cover;
+}
+
+
+
+.card-content {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    flex-grow: 1;
+    justify-content: space-between;
+}
+
+
+.card-content h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    min-height: 48px;
+    max-height: 48px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.card-content .price {
+    font-size: 0.95rem;
+    font-weight: bold;
+    color: #FFD447;
+    white-space: nowrap;
+    min-height: 20px;
+    max-height: 20px;
+    margin-bottom: 15px;
+}
+
+.card-btn {
+    margin-top: auto;
+    margin-bottom: 10px; /* ↓ espace entre le bouton et le bas de la carte */
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 50px;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+
+.card-btn:hover {
+    background-color: white;
+    color: #6D57FC;
+}
+
+/* Badge */
+.badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #ff5a5f;
+    color: white;
+    font-size: 0.75rem;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-weight: bold;
 }
