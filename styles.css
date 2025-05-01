@@ -475,3 +475,106 @@ nav a:hover {
     border-radius: 20px;
     font-weight: bold;
 }
+
+
+
+/* SECTION AVIS */
+.testimonials {
+  background-color: #ffffff;
+  padding: 100px 20px;
+}
+
+/* TITRES ET DESCRIPTION */
+.testimonial-header {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px 40px;
+  text-align: left;
+}
+
+.section-subtitle {
+  color: #6D57FC;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #0C0A1C;
+}
+
+.section-description {
+  font-size: 1rem;
+  color: #333;
+  max-width: 600px;
+}
+
+/* CARROUSEL GLOBAL */
+.carousel-container {
+  overflow: hidden;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.8s ease-in-out;
+  width: max-content;
+}
+
+/* GROUPE DE 2 TÉMOIGNAGES */
+.testimonial-pair {
+  display: flex;
+  flex: 0 0 100%;
+  justify-content: center;
+}
+
+/* CARTE INDIVIDUELLE */
+.testimonial-card {
+  flex: 0 0 510px;
+  margin: 0 10px;
+  background-color: #6D57FC;
+  color: white;
+  border-radius: 16px;
+  padding: 30px 20px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.testimonial-card img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.testimonial-card .stars {
+  color: #FFD447;
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
+.testimonial-card .name {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .testimonial-card {
+    width: 90vw;
+  }
+
+  .testimonial-pair {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+  
