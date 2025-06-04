@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Inscription - Évolut'IA</title>
+  <link rel="stylesheet" href="../css/register.css">
+  <script src="../script/auth.js" defer></script>
+</head>
+<body>
+
+<div class="register-container">
+  <!-- Colonne de gauche -->
+  <div class="register-left">
+    <img src="../images/Logo_noir_Evolut_IA.png" alt="Logo Évolut'IA" class="logo">
+    <h1>S’inscrire</h1>
+    <p>Si vous avez déjà un compte, connectez-vous<br>
+      Vous pouvez vous <a href="login.html">connecter ici !</a></p>
+    <div class="register-image">
+      <img src="../images/student-illustration.png" alt="Illustration">
+    </div>
+  </div>
+
+  <!-- Colonne de droite -->
+  <div class="register-right">
+    <h2>S’inscrire</h2>
+    <form id="register-form">
+      <input type="email" id="email" placeholder="Saisir l'adresse électronique" required>
+      <input type="text" id="username" placeholder="Créer un nom d'utilisateur" required>
+      <input type="tel" id="phone" placeholder="Numéro de contact" required>
+      <div class="password-container">
+        <input type="password" id="password" placeholder="Mot de passe" required>
+      </div>
+      <div class="password-container">
+        <input type="password" id="confirm-password" placeholder="Confirmer le mot de passe" required>
+      </div>
+      <button type="submit" class="register-button">S'inscrire</button>
+    </form>
+    <div class="divider">ou continuer avec</div>
+    <div class="social-register">
+      <img src="../images/facebook.png" alt="Facebook">
+      <img src="../images/apple.png" alt="Apple">
+      <img src="../images/google.png" alt="Google">
+    </div>
+    <div class="back-to-home">
+      <a href="index.html">← Retourner à l'accueil</a>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

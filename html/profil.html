@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mon Profil - Évolut'IA</title>
+  <link rel="stylesheet" href="../css/profil.css" />
+  <script src="../script/auth.js" defer></script>
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header>
+    <div class="logo">
+      <img src="../images/logo.png" alt="Logo Évolut'IA">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="produit.html">Produits</a></li>
+        <li><a href="prix.html">Prix</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="auth-buttons">
+      <button class="profile-btn" id="profile-button" onclick="window.location.href='profil.html'">Profil</button>
+      <button class="join-btn">Rejoignez-nous →</button>
+    </div>
+  </header>
+
+  <!-- Profile Section -->
+  <section class="profile-section">
+    <div class="profile-container">
+      <h1>Mon Profil</h1>
+      <p><strong>Nom d'utilisateur :</strong> <span id="username"></span></p>
+      <p><strong>Email :</strong> <span id="email"></span></p>
+      <button id="logout-button">Se déconnecter</button>
+    </div>
+  </section>
+
+</body>
+</html>

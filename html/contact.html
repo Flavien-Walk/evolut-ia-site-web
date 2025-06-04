@@ -3,31 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact</title>
-  <link rel="stylesheet" href="../css/page.css">
+  <title>Contact - Évolut'IA</title>
+  <link rel="stylesheet" href="../css/contact.css">
+  <script src="../script/auth.js" defer></script>
 </head>
 <body>
 
  <!-- Header Section -->
  <header>
     <div class="logo">
-        <img src="..//images/logo.png" alt="Logo Évolut'IA"> <!-- Remplacez ceci par votre logo -->
+        <img src="../images/logo.png" alt="Logo Évolut'IA">
     </div>
     <nav>
         <ul>
             <li><a href="index.html">Accueil</a></li>
             <li><a href="produit.html">Produits</a></li>
             <li><a href="prix.html">Prix</a></li>
-            <li><a href="page.html">Contact</a></li>
+            <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
     <div class="auth-buttons">
-        <button class="connect-btn">Se connecter</button>
+        <button class="connect-btn" id="login-button" onclick="window.location.href='login.html'">Se connecter</button>
+        <button class="profile-btn" id="profile-button" style="display: none;" onclick="window.location.href='profil.html'">Profil</button>
         <button class="join-btn">Rejoignez-nous →</button>
     </div>
 </header>
-
-
 
 <section class="contact-section">
   <div class="contact-container">
@@ -48,8 +48,8 @@
 
     <!-- IMAGE À DROITE -->
     <div class="contact-right">
-        <img src="..//images/bannieres.png" alt="Illustration Contact">
-      </div>
+        <img src="../images/bannieres.png" alt="Illustration Contact">
+    </div>
 
   </div>
 </section>

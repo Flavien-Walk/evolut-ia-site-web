@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Connexion - Évolut'IA</title>
+  <link rel="stylesheet" href="../css/login.css">
+  <script src="../script/auth.js" defer></script>
+</head>
+<body>
+
+<div class="login-container">
+  <!-- Colonne de gauche -->
+  <div class="login-left">
+    <img src="../images/Logo_noir_Evolut_IA.png" alt="Logo Évolut'IA" class="logo">
+    <h1>Se connecter</h1>
+    <p>Si vous n’avez pas de compte, inscrivez-vous<br>
+      Vous pouvez vous <a href="register.html">inscrire ici !</a></p>
+    <div class="login-image">
+      <img src="../images/student-illustration.png" alt="Illustration">
+    </div>
+  </div>
+
+  <!-- Colonne de droite -->
+  <div class="login-right">
+    <h2>Se connecter à</h2>
+    <form id="login-form">
+      <input type="email" id="email" placeholder="Saisir l'adresse électronique" required>
+      <div class="password-container">
+        <input type="password" id="password" placeholder="Mot de passe" required>
+      </div>
+      <a href="#" class="forgot-password">Mot de passe oublié ?</a>
+      <button type="submit" class="login-button">Connexion</button>
+    </form>
+    <div class="divider">ou continuer avec</div>
+    <div class="social-login">
+      <img src="../images/facebook.png" alt="Facebook">
+      <img src="../images/apple.png" alt="Apple">
+      <img src="../images/google.png" alt="Google">
+    </div>
+    <div class="back-to-home">
+      <a href="index.html">← Retourner à l'accueil</a>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

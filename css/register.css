@@ -1,0 +1,159 @@
+/* Reset et base */
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #ffffff;
+    color: #333333;
+}
+
+/* Conteneur principal */
+.register-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Colonne gauche */
+.register-left {
+    flex: 1;
+    background-color: #f9f9f9;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.register-left .logo {
+    width: 120px;
+    margin-bottom: 40px;
+}
+
+.register-left h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.register-left p {
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+.register-left p a {
+    color: #6C63FF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.register-left p a:hover {
+    text-decoration: underline;
+}
+
+.register-left .register-image {
+    margin-top: 40px;
+}
+
+.register-left .register-image img {
+    max-width: 300px;
+    width: 100%;
+}
+
+/* Colonne droite */
+.register-right {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.register-right h2 {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+}
+
+.register-right form {
+    width: 100%;
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.register-right input {
+    padding: 12px;
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+    font-size: 1em;
+    background-color: #f9f9f9;
+}
+
+.register-button {
+    padding: 12px;
+    background-color: #6C63FF;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.register-button:hover {
+    background-color: #5a52d6;
+}
+
+.divider {
+    margin: 20px 0;
+    font-size: 0.9em;
+    color: #999999;
+    text-align: center;
+}
+
+.social-register {
+    display: flex;
+    gap: 20px;
+}
+
+.social-register img {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.social-register img:hover {
+    transform: scale(1.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .register-container {
+        flex-direction: column;
+    }
+    .register-left, .register-right {
+        align-items: center;
+        text-align: center;
+    }
+    .register-left .register-image img {
+        max-width: 200px;
+    }
+}
+
+.back-to-home {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.back-to-home a {
+    color: #6C63FF;
+    text-decoration: none;
+    font-size: 0.95em;
+    transition: color 0.3s;
+}
+
+.back-to-home a:hover {
+    text-decoration: underline;
+    color: #5a52d6;
+}
+

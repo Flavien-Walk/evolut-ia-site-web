@@ -3,105 +3,100 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tarifs</title>
+  <title>Tarifs - Évolut'IA</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/prix.css">
+  <script src="../script/auth.js" defer></script>
 </head>
 <body>
 
-<!-- Header Section -->
-<header>
-    <div class="logo">
-        <img src="..//images/logo.png" alt="Logo Évolut'IA"> <!-- Remplacez ceci par votre logo -->
-    </div>
-    <nav>
-        <ul>
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="produit.html">Produits</a></li>
-            <li><a href="prix.html">Prix</a></li>
-            <li><a href="page.html">Contact</a></li>
-        </ul>
-    </nav>
-    <div class="auth-buttons">
-        <button class="connect-btn">Se connecter</button>
-        <button class="join-btn">Rejoignez-nous →</button>
-    </div>
-</header>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <img src="../images/logo.png" alt="Logo Évolut'IA">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="produit.html">Produits</a></li>
+                <li><a href="prix.html">Prix</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="auth-buttons">
+            <button class="connect-btn" id="login-button" onclick="window.location.href='login.html'">Se connecter</button>
+            <button class="profile-btn" id="profile-button" style="display: none;" onclick="window.location.href='profil.html'">Profil</button>
+            <button class="join-btn">Rejoignez-nous →</button>
+        </div>
+    </header>
 
+    <section class="pricing-section">
+        <h1>Choisissez votre formule</h1>
+        <p>Des solutions pour tous les besoins, à tous les niveaux.</p>
 
+        <div class="plans-container">
 
+            <div class="plan-card">
+                <div class="plan-title">Basique</div>
+                <div class="plan-price">9,99€/mois</div>
+                <ul class="plan-features">
+                    <li>Test de positionnement</li>
+                    <li>Suivi parental</li>
+                    <li>Suivi des perfs + accompagnement perso</li>
+                    <li>Détection de lacune (IA)</li>
+                    <li>Test de connaissance pour éval blanc</li>
+                    <li>Exercices et évaluations</li>
+                    <li>Test pendant un exercice</li>
+                </ul>
+                <a href="#" class="plan-button">Choisir</a>
+            </div>
 
+            <div class="plan-card">
+                <div class="plan-title">Avancé</div>
+                <div class="plan-price">14,99€/mois</div>
+                <ul class="plan-features">
+                    <li>Test de positionnement</li>
+                    <li>Suivi parental</li>
+                    <li>Suivi des perfs + accompagnement perso</li>
+                    <li>Détection de lacune (IA)</li>
+                    <li>Challenge Quizz</li>
+                    <li>Exercices + évaluations</li>
+                    <li>Masterclass en ligne</li>
+                    <li>Test pendant un exercice</li>
+                    <li>Personnalisation de l’app</li>
+                    <li>Accès à : cartes mentales, fiches de synthèse</li>
+                </ul>
+                <a href="#" class="plan-button">Choisir</a>
+            </div>
 
+            <div class="plan-card">
+                <div class="plan-title">École</div>
+                <div class="plan-price">9,99€/élève</div>
+                <ul class="plan-features">
+                    <li>Suivi individuel + KPI pour CPE, profs</li>
+                    <li>Suivi parental</li>
+                    <li>Détection de lacune (IA)</li>
+                    <li>Test de positionnement</li>
+                    <li>Cours personnalisés + QR code</li>
+                    <li>Détection de texte IA</li>
+                </ul>
+                <a href="#" class="plan-button">Contactez-nous</a>
+            </div>
 
+            <div class="plan-card">
+                <div class="plan-title">Pro Santé</div>
+                <div class="plan-price">49,99€/mois</div>
+                <ul class="plan-features">
+                    <li>Accès complet plateforme</li>
+                    <li>Fonctionnalités avancées pour accompagnement thérapeutique</li>
+                    <li>Outils de suivi personnalisés</li>
+                    <li>Support dédié</li>
+                </ul>
+                <a href="#" class="plan-button">Contactez-nous</a>
+            </div>
 
-
-<section class="pricing-section">
-  <h1>Choisissez votre formule</h1>
-  <p>Des solutions pour tous les besoins, à tous les niveaux.</p>
-
-  <div class="plans-container">
-
-    <div class="plan-card">
-      <div class="plan-title">Basique</div>
-      <div class="plan-price">9,99€/mois</div>
-      <ul class="plan-features">
-        <li>Test de positionnement</li>
-        <li>Suivi parental</li>
-        <li>Suivi des perfs + accompagnement perso</li>
-        <li>Détection de lacune (IA)</li>
-        <li>Test de connaissance pour éval blanc</li>
-        <li>Exercices et évaluations</li>
-        <li>Test pendant un exercice</li>
-      </ul>
-      <a href="#" class="plan-button">Choisir</a>
-    </div>
-
-    <div class="plan-card">
-      <div class="plan-title">Avancé</div>
-      <div class="plan-price">14,99€/mois</div>
-      <ul class="plan-features">
-        <li>Test de positionnement</li>
-        <li>Suivi parental</li>
-        <li>Suivi des perfs + accompagnement perso</li>
-        <li>Détection de lacune (IA)</li>
-        <li>Challenge Quizz</li>
-        <li>Exercices + évaluations</li>
-        <li>Masterclass en ligne</li>
-        <li>Test pendant un exercice</li>
-        <li>Personnalisation de l’app</li>
-        <li>Accès à : cartes mentales, fiches de synthèse</li>
-      </ul>
-      <a href="#" class="plan-button">Choisir</a>
-    </div>
-
-    <div class="plan-card">
-      <div class="plan-title">École</div>
-      <div class="plan-price">9,99€/élève</div>
-      <ul class="plan-features">
-        <li>Suivi individuel + KPI pour CPE, profs</li>
-        <li>Suivi parental</li>
-        <li>Détection de lacune (IA)</li>
-        <li>Test de positionnement</li>
-        <li>Cours personnalisés + QR code</li>
-        <li>Détection de texte IA</li>
-      </ul>
-      <a href="#" class="plan-button">Contactez-nous</a>
-    </div>
-
-    <div class="plan-card">
-      <div class="plan-title">Pro Santé</div>
-      <div class="plan-price">49,99€/mois</div>
-      <ul class="plan-features">
-        <li>Accès complet plateforme</li>
-        <li>Fonctionnalités avancées pour accompagnement thérapeutique</li>
-        <li>Outils de suivi personnalisés</li>
-        <li>Support dédié</li>
-      </ul>
-      <a href="#" class="plan-button">Contactez-nous</a>
-    </div>
-
-  </div>
-</section>
+        </div>
+    </section>
 
 </body>
 </html>

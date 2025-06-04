@@ -78,6 +78,40 @@ nav a:hover {
 
 
 
+/* Bouton profil par défaut */
+.profile-btn {
+    background: linear-gradient(90deg, #6D57FC, #4D47C3);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(77, 71, 195, 0.3);
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effet */
+.profile-btn:hover {
+    background: linear-gradient(90deg, #4D47C3, #6D57FC);
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(77, 71, 195, 0.5);
+}
+
+/* Style connecté */
+.profile-btn.connected {
+    background: linear-gradient(90deg, #28A745, #218838);
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(40, 167, 69, 0.5);
+}
+
+.profile-btn.connected:hover {
+    background: linear-gradient(90deg, #218838, #28A745);
+    transform: scale(1.08);
+    box-shadow: 0 0 15px rgba(40, 167, 69, 0.7);
+}
 
 
 

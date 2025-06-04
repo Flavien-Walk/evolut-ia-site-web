@@ -5,30 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Évolut'IA</title>
     <link rel="stylesheet" href="../css/styles.css">
-    <script src="../script/script.js" defer></script>
+    <script src="../script/auth.js" defer></script>
 </head>
-  
-
-
-
-
 
 <body>
     <!-- Header Section -->
     <header>
         <div class="logo">
-            <img src="../images/logo.png" alt="Logo Évolut'IA"> <!-- Remplacez ceci par votre logo -->
+            <img src="../images/logo.png" alt="Logo Évolut'IA">
         </div>
         <nav>
             <ul>
-                <li><a href="#">Accueil</a></li>
+                <li><a href="index.html">Accueil</a></li>
                 <li><a href="produit.html">Produits</a></li>
                 <li><a href="prix.html">Prix</a></li>
-                <li><a href="page.html">Contact</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
         <div class="auth-buttons">
-            <button class="connect-btn">Se connecter</button>
+            <button class="connect-btn" id="login-button" onclick="window.location.href='login.html'">Se connecter</button>
+            <button class="profile-btn" id="profile-button" style="display: none;" onclick="window.location.href='profil.html'">Profil</button>
             <button class="join-btn">Rejoignez-nous →</button>
         </div>
     </header>
@@ -44,16 +40,10 @@
             </div>
         </div>
         <div class="hero-image">
-            <img src="..//images/enfantassis.png" alt="Illustration d'apprentissage personnalisé">
+            <img src="../images/enfantassis.png" alt="Illustration d'apprentissage personnalisé">
         </div>
     </section>
-</body>
-</html>
- 
-    
-    
-    
-    
+
     <!-- Notre Application Section -->
     <section class="application">
         <div class="application-content">
@@ -63,151 +53,142 @@
             <a href="#" class="learn-more">En savoir plus →</a>
         </div>
         <div class="application-image">
-            <img src="..//images/presentation.png" alt="Présentation de l'application">
+            <img src="../images/presentation.png" alt="Présentation de l'application">
         </div>
-         </div>
     </section>
 
     <!-- Partenaires Section -->
     <section class="partners">
-        <img src="..//images/epitechlogo.png" alt="Epitech" class="partner-logo">
-        <img src="..//images/qualiopilogo.png" alt="Qualiopi" class="partner-logo">
+        <img src="../images/epitechlogo.png" alt="Epitech" class="partner-logo">
+        <img src="../images/qualiopilogo.png" alt="Qualiopi" class="partner-logo">
     </section>
 
     <!-- Éducation au cas par cas -->
-<section class="education">
-    <p class="section-label">Nous intégrons</p>
-    <h2>Une éducation au cas par cas</h2>
-    <p class="section-subtitle">
-      Problems trying to resolve the conflict between<br />
-      the two major realms of Classical physics: Newtonian mechanics
-    </p>
-  
-    <div class="education-features">
-        <div class="feature-box decale-haut">
-          <div class="icon">🏫</div>
-          <h3>IA INTÉGRÉ</h3>
-          <p>lorem ipsum</p>
-        </div>
-        <div class="feature-box decale-bas">
-          <div class="icon">🧠</div>
-          <h3>Exercices adaptés</h3>
-          <p>lorem ipsum</p>
-        </div>
-        <div class="feature-box decale-haut">
-          <div class="icon">🎓</div>
-          <h3>Vidéos expliquées</h3>
-          <p>lorem ipsum</p>
-        </div>
-        <div class="feature-box decale-bas">
-          <div class="icon">📊</div>
-          <h3>2,769 online courses</h3>
-          <p>lorem ipsum</p>
-        </div>
-      </div>
-      
-  </section>
+    <section class="education">
+        <p class="section-label">Nous intégrons</p>
+        <h2>Une éducation au cas par cas</h2>
+        <p class="section-subtitle">
+            Problems trying to resolve the conflict between<br />
+            the two major realms of Classical physics: Newtonian mechanics
+        </p>
 
-  <!-- Produits -->
-<section class="products">
-    <p class="section-label">Courses</p>
-    <h2>Trouvez le produit qui vous correspond</h2>
-    <p class="section-subtitle">
-      Prêt à apprendre et à évoluer à partir de tes connaissances actuelles ?<br />
-      Choisis ton parcours et commence ton aventure !
-    </p>
-  
-    <div class="product-cards">
-      <!-- Carte 1 -->
-      <div class="product-card">
-        <img src="..//images/image1.png" alt="L'Essentiel" />
-        <div class="card-content">
-          <h3>L’Essentiel</h3>
-          <p class="price">85 € soit 8 €/mois pendant 1 an</p>
-          <a href="#" class="card-btn">En savoir plus →</a>
+        <div class="education-features">
+            <div class="feature-box decale-haut">
+                <div class="icon">🏫</div>
+                <h3>IA INTÉGRÉ</h3>
+                <p>lorem ipsum</p>
+            </div>
+            <div class="feature-box decale-bas">
+                <div class="icon">🧠</div>
+                <h3>Exercices adaptés</h3>
+                <p>lorem ipsum</p>
+            </div>
+            <div class="feature-box decale-haut">
+                <div class="icon">🎓</div>
+                <h3>Vidéos expliquées</h3>
+                <p>lorem ipsum</p>
+            </div>
+            <div class="feature-box decale-bas">
+                <div class="icon">📊</div>
+                <h3>2,769 online courses</h3>
+                <p>lorem ipsum</p>
+            </div>
         </div>
-      </div>
-  
-      <!-- Carte 2 -->
-      <div class="product-card">
-        <div class="badge">Best seller</div>
-        <img src="..//images/image2.png" alt="L’Avancé" />
-        <div class="card-content">
-          <h3>L’Avancé</h3>
-          <p class="price">160 € soit 15 €/mois pendant 1 an</p>
-          <a href="#" class="card-btn">En savoir plus →</a>
-        </div>
-      </div>
-  
-      <!-- Carte 3 -->
-      <div class="product-card">
-        <img src="..//images/image3.png" alt="Enseignants" />
-        <div class="card-content">
-          <h3>L’Enseignants et l’établissements</h3>
-          <p class="price">10 €/élève</p>
-          <a href="#" class="card-btn">En savoir plus →</a>
-        </div>
-      </div>
-  
-      <!-- Carte 4 -->
-      <div class="product-card">
-        <img src="..//images/image4.png" alt="Professionnels de santé" />
-        <div class="card-content">
-          <h3>Professionnels de Santé et Spécialistes</h3>
-          <p class="price">240 € soit 20 €/mois pendant 1 an</p>
-          <a href="#" class="card-btn">En savoir plus →</a>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
+    <!-- Produits -->
+    <section class="products">
+        <p class="section-label">Courses</p>
+        <h2>Trouvez le produit qui vous correspond</h2>
+        <p class="section-subtitle">
+            Prêt à apprendre et à évoluer à partir de tes connaissances actuelles ?<br />
+            Choisis ton parcours et commence ton aventure !
+        </p>
 
-  <section class="testimonials">
-    <div class="testimonial-header">
-      <p class="section-subtitle">Testimonials</p>
-      <h2 class="section-title">Nos avis</h2>
-      <p class="section-description">
-        Découvrez ce que pensent ceux qui ont déjà franchi le pas.<br>
-        Des avis authentiques qui témoignent de leur expérience !
-      </p>
-    </div>
-  
-    <div class="carousel-container">
-      <div class="carousel-track">
-        <div class="testimonial-card">
-          <img src="..//images/client1.jpg" alt="Client 1">
-          <p>“Plateforme très intuitive, je recommande à 100 %.”</p>
-          <div class="stars">★★★★★</div>
-          <div class="name">Regina Miles</div>
-        </div>
-  
-        <div class="testimonial-card">
-          <img src="..//images/client2.jpg" alt="Client 2">
-          <p>“Un gain de temps énorme pour mes révisions.”</p>
-          <div class="stars">★★★★★</div>
-          <div class="name">Alex Dubois</div>
-        </div>
-  
-        <div class="testimonial-card">
-          <img src="..//images/client3.jpg" alt="Client 3">
-          <p>“Très bon rapport qualité/prix, support au top.”</p>
-          <div class="stars">★★★★★</div>
-          <div class="name">Sophie Leroy</div>
-        </div>
-  
-        <div class="testimonial-card">
-          <img src="..//images/client4.jpg" alt="Client 4">
-          <p>“J’ai progressé en quelques semaines seulement.”</p>
-          <div class="stars">★★★★★</div>
-          <div class="name">Mickaël R.</div>
-        </div>
-      </div>
-    </div>
-  </section>
-  
+        <div class="product-cards">
+            <div class="product-card">
+                <img src="../images/image1.png" alt="L'Essentiel" />
+                <div class="card-content">
+                    <h3>L’Essentiel</h3>
+                    <p class="price">85 € soit 8 €/mois pendant 1 an</p>
+                    <a href="#" class="card-btn">En savoir plus →</a>
+                </div>
+            </div>
 
-  
-  <script src="..//script/script.js"></script>
+            <div class="product-card">
+                <div class="badge">Best seller</div>
+                <img src="../images/image2.png" alt="L’Avancé" />
+                <div class="card-content">
+                    <h3>L’Avancé</h3>
+                    <p class="price">160 € soit 15 €/mois pendant 1 an</p>
+                    <a href="#" class="card-btn">En savoir plus →</a>
+                </div>
+            </div>
 
+            <div class="product-card">
+                <img src="../images/image3.png" alt="Enseignants" />
+                <div class="card-content">
+                    <h3>L’Enseignants et l’établissements</h3>
+                    <p class="price">10 €/élève</p>
+                    <a href="#" class="card-btn">En savoir plus →</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="../images/image4.png" alt="Professionnels de santé" />
+                <div class="card-content">
+                    <h3>Professionnels de Santé et Spécialistes</h3>
+                    <p class="price">240 € soit 20 €/mois pendant 1 an</p>
+                    <a href="#" class="card-btn">En savoir plus →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Témoignages -->
+    <section class="testimonials">
+        <div class="testimonial-header">
+            <p class="section-subtitle">Testimonials</p>
+            <h2 class="section-title">Nos avis</h2>
+            <p class="section-description">
+                Découvrez ce que pensent ceux qui ont déjà franchi le pas.<br>
+                Des avis authentiques qui témoignent de leur expérience !
+            </p>
+        </div>
+
+        <div class="carousel-container">
+            <div class="carousel-track">
+                <div class="testimonial-card">
+                    <img src="../images/client1.jpg" alt="Client 1">
+                    <p>“Plateforme très intuitive, je recommande à 100 %.”</p>
+                    <div class="stars">★★★★★</div>
+                    <div class="name">Regina Miles</div>
+                </div>
+
+                <div class="testimonial-card">
+                    <img src="../images/client2.jpg" alt="Client 2">
+                    <p>“Un gain de temps énorme pour mes révisions.”</p>
+                    <div class="stars">★★★★★</div>
+                    <div class="name">Alex Dubois</div>
+                </div>
+
+                <div class="testimonial-card">
+                    <img src="../images/client3.jpg" alt="Client 3">
+                    <p>“Très bon rapport qualité/prix, support au top.”</p>
+                    <div class="stars">★★★★★</div>
+                    <div class="name">Sophie Leroy</div>
+                </div>
+
+                <div class="testimonial-card">
+                    <img src="../images/client4.jpg" alt="Client 4">
+                    <p>“J’ai progressé en quelques semaines seulement.”</p>
+                    <div class="stars">★★★★★</div>
+                    <div class="name">Mickaël R.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="../script/script.js"></script>
 </body>
 </html>
