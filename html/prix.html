@@ -98,5 +98,50 @@
         </div>
     </section>
 
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const planButtons = document.querySelectorAll(".plan-button");
+
+      planButtons.forEach(button => {
+        button.addEventListener("click", async (e) => {
+          e.preventDefault();
+
+          const token = localStorage.getItem("token");
+          if (!token) {
+            alert("Vous devez être connecté pour choisir une formule.");
+            window.location.href = "login.html";
+            return;
+          }
+
+          const planTitle = button.closest(".plan-card").querySelector(".plan-title").textContent;
+
+          try {
+            const response = await fetch("http://10.109.249.241:3636/choose-plan", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${token}`
+              },
+              body: JSON.stringify({ plan: planTitle })
+            });
+
+            if (!response.ok) {
+              throw new Error("Votre session a expiré ou est invalide. Veuillez vous reconnecter.");
+            }
+
+            const data = await response.json();
+            alert(`Merci ! Vous avez choisi la formule : ${planTitle}.`);
+
+            console.log(`✅ Utilisateur connecté a choisi le pack : ${planTitle}`);
+          } catch (error) {
+            console.error("Erreur lors de la sélection du plan :", error);
+            alert(error.message || "Une erreur est survenue.");
+            localStorage.removeItem("token");
+            window.location.href = "login.html";
+          }
+        });
+      });
+    });
+    </script>
 </body>
 </html>
