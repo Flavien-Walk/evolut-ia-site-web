@@ -4,11 +4,11 @@ const learnMoreButton = document.querySelector('.secondary-btn');
 
 // Ajouter les événements de clic
 joinButton.addEventListener('click', () => {
-    window.location.href = "https://votre-lien-d-inscription.com"; // Remplacez ce lien par celui de votre page d'inscription
+    window.location.href = "http://127.0.0.1:5500/evolut-IAlanding/html/register.html"; // Remplacez ce lien par celui de votre page d'inscription
 });
 
 learnMoreButton.addEventListener('click', () => {
-    window.location.href = "#plus-d-infos"; // Remplacez cela par l'ID d'une section pour plus d'informations
+    window.location.href = "#"; // Remplacez cela par l'ID d'une section pour plus d'informations
 });
 
 
