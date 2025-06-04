@@ -137,7 +137,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Gestion de la déconnexion
   if (logoutButton) {
-    logoutButton.addEventListener("click", () => {
+    logoutButton.addEventListener("click", async () => {
+      const token = localStorage.getItem("token");
+      if (token) {
+        try {
+          await fetch("http://10.109.249.241:3636/logout", {
+            method: "POST",
+            headers: { Authorization: `Bearer ${token}` }
+          });
+        } catch (error) {
+          console.error("Erreur lors de la déconnexion :", error);
+        }
+      }
       localStorage.removeItem("token");
       alert("Vous avez été déconnecté.");
       updateAuthButtons();
