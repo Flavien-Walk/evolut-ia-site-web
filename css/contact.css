@@ -98,18 +98,19 @@ nav a:hover {
     box-shadow: 0 0 15px rgba(77, 71, 195, 0.5);
 }
 
-/* Style connecté */
+/* Classe connected - applique dès connexion */
 .profile-btn.connected {
-    background: linear-gradient(90deg, #28A745, #218838);
-    color: white;
-    font-weight: bold;
-    box-shadow: 0 0 10px rgba(40, 167, 69, 0.5);
+  background: linear-gradient(90deg, #A7A3FF,#A7A3FF);
+  color: white;
+  box-shadow: 0 0 10px rgba(167, 163, 255, 0.5);
+  font-weight: bold;
 }
 
+
 .profile-btn.connected:hover {
-    background: linear-gradient(90deg, #218838, #28A745);
-    transform: scale(1.08);
-    box-shadow: 0 0 15px rgba(40, 167, 69, 0.7);
+  background: linear-gradient(90deg, #4D47C3, #6D57FC);
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(77, 71, 195, 0.5);
 }
 
 
