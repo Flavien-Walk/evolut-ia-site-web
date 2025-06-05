@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Achat - Semaine Révision Bac</title>
+  <link rel="stylesheet" href="../css/achat.css" />
+  <script src="../script/auth.js" defer></script>
+</head>
+
+
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <img src="../images/logo.png" alt="Logo Évolut'IA">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="produit.html">Produits</a></li>
+        <li><a href="prix.html">Prix</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="auth-buttons">
+      <button class="connect-btn" id="login-button" onclick="window.location.href='login.html'">Se connecter</button>
+      <button class="profile-btn" id="profile-button" style="display: none;" onclick="window.location.href='profil.html'">Profil</button>
+      <button class="join-btn">Rejoignez-nous →</button>
+    </div>
+  </header>
+
+  <!-- Bandeau titre -->
+  <section class="header">
+    <h1>Mon Panier</h1>
+    <p>Les articles seront réservés pendant 60 minutes</p>
+  </section>
+
+  <!-- Contenu principal -->
+  <main class="container">
+    <section class="cart-left">
+      <div class="cart-item">
+        <img src="../images/pack9.png" alt="Révision Bac">
+        <div class="item-info">
+          <h2>Semaine Spéciale Révision Bac</h2>
+          <p class="price">6,99 €</p>
+          <p class="desc">Accès intensif à toutes les matières clés + planning personnalisé</p>
+          <div class="quantity">
+            <label for="qty">Qté :</label>
+            <select id="qty">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+            </select>
+          </div>
+        </div>
+        <button class="remove-btn">✖</button>
+      </div>
+    </section>
+
+    <section class="cart-right">
+      <div class="summary">
+        <h2>Total</h2>
+        <div class="line">
+          <span>Sous-total</span>
+          <span>6,99 €</span>
+        </div>
+        <div class="line">
+          <span>Livraison</span>
+          <span>Standard (gratuite)</span>
+        </div>
+        <button class="pay-btn">PAIEMENT</button>
+        <p class="accept">Nous acceptons :</p>
+        <div class="payments">
+          <img src="../images/visa.png" alt="Visa" />
+          <img src="../images/mastercard.png" alt="Mastercard" />
+          <img src="../images/paypal.png" alt="Paypal" />
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+  <!-- Popup de paiement -->
+<div class="popup-overlay" id="paymentPopup">
+    <div class="popup-content">
+      <h3>Choisissez votre moyen de paiement</h3>
+      <div class="payment-options">
+        <label><input type="radio" name="pay-method" checked> Visa</label>
+        <label><input type="radio" name="pay-method"> Mastercard</label>
+        <label><input type="radio" name="pay-method"> PayPal</label>
+      </div>
+      <button class="confirm-btn" onclick="confirmPayment()">Confirmer le paiement</button>
+      <button class="close-btn" onclick="closePopup()">Annuler</button>
+    </div>
+  </div>
+  
+  <script>
+    const popup = document.getElementById("paymentPopup");
+    const payBtn = document.querySelector(".pay-btn");
+  
+    payBtn.addEventListener("click", () => {
+      popup.style.display = "flex";
+    });
+  
+    function closePopup() {
+      popup.style.display = "none";
+    }
+  
+    function confirmPayment() {
+      alert("✅ Paiement confirmé ! Merci pour votre achat.");
+      popup.style.display = "none";
+    }
+  </script>
+  
+<body>
+
+
+</body>
+</html>
