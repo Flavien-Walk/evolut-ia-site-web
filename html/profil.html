@@ -6,6 +6,48 @@
   <title>Mon Profil - Évolut'IA</title>
   <link rel="stylesheet" href="../css/profil.css" />
   <script src="../script/auth.js" defer></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", async () => {
+      const token = localStorage.getItem("token");
+      if (!token) {
+        window.location.href = "login.html";
+        return;
+      }
+
+      try {
+        const response = await fetch("http://10.109.249.241:3636/user-info", {
+          headers: { Authorization: `Bearer ${token}` }
+        });
+
+        if (!response.ok) {
+          throw new Error("Session expirée. Veuillez vous reconnecter.");
+        }
+
+        const data = await response.json();
+
+        if (data.username && data.email) {
+          document.getElementById("username").textContent = data.username;
+          document.getElementById("email").textContent = data.email;
+
+          // Affichage du plan choisi
+          const offerElement = document.getElementById("selected-offer");
+          if (data.selectedPlan && data.selectedPlan !== "") {
+            offerElement.textContent = data.selectedPlan;
+          } else {
+            offerElement.textContent = "Aucune";
+          }
+
+        } else {
+          localStorage.removeItem("token");
+          window.location.href = "login.html";
+        }
+      } catch (error) {
+        console.error("Erreur lors de la récupération du profil :", error);
+        localStorage.removeItem("token");
+        window.location.href = "login.html";
+      }
+    });
+  </script>
 </head>
 <body>
 
@@ -34,6 +76,7 @@
       <h1>Mon Profil</h1>
       <p><strong>Nom d'utilisateur :</strong> <span id="username"></span></p>
       <p><strong>Email :</strong> <span id="email"></span></p>
+      <p><strong>Mon offre :</strong> <span id="selected-offer">Chargement...</span></p>
       <button id="logout-button">Se déconnecter</button>
     </div>
   </section>

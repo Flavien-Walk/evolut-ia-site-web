@@ -1,28 +1,33 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const token = localStorage.getItem("token");
   const loginButton = document.getElementById("login-button");
   const profileButton = document.getElementById("profile-button");
   const logoutButton = document.getElementById("logout-button");
 
-  // Affichage du bouton profil ou login
-  if (token) {
-    if (loginButton) loginButton.style.display = "none";
-    if (profileButton) {
-      profileButton.style.display = "inline-block"; // Montre le bouton profil dès la connexion
-      profileButton.classList.add("connected");     // Ajoute la classe pour le style
+  // Fonction pour mettre à jour l'affichage des boutons
+  const updateAuthButtons = () => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      if (loginButton) loginButton.style.display = "none";
+      if (profileButton) {
+        profileButton.style.display = "inline-block";
+        profileButton.classList.add("connected");
+      }
+    } else {
+      if (loginButton) loginButton.style.display = "inline-block";
+      if (profileButton) {
+        profileButton.style.display = "none";
+        profileButton.classList.remove("connected");
+      }
     }
-  } else {
-    if (loginButton) loginButton.style.display = "inline-block";
-    if (profileButton) {
-      profileButton.style.display = "none";
-      profileButton.classList.remove("connected");
-    }
-  }
+  };
+
+  updateAuthButtons();
 
   // Redirection sécurisée sur le bouton Profil
   if (profileButton) {
     profileButton.addEventListener("click", (e) => {
       e.preventDefault();
+      const token = localStorage.getItem("token");
       if (token) {
         window.location.href = "profil.html";
       } else {
@@ -51,6 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (response.ok) {
           alert("Connexion réussie !");
           localStorage.setItem("token", data.token);
+          updateAuthButtons();
           window.location.href = "index.html";
         } else {
           alert(data.error || "Erreur de connexion.");
@@ -90,6 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (response.ok) {
           alert("Inscription réussie !");
           localStorage.setItem("token", data.token);
+          updateAuthButtons();
           window.location.href = "index.html";
         } else {
           alert(data.error || "Erreur lors de l'inscription.");
@@ -102,32 +109,49 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Récupération des infos sur la page profil
-  if (window.location.pathname.endsWith("profil.html") && token) {
-    fetch("http://10.109.249.241:3636/user-info", {
-      headers: { Authorization: `Bearer ${token}` }
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        if (data.username && data.email) {
-          document.getElementById("username").textContent = data.username;
-          document.getElementById("email").textContent = data.email;
-        } else {
-          localStorage.removeItem("token");
-          window.location.href = "login.html";
-        }
+  if (window.location.pathname.endsWith("profil.html")) {
+    const token = localStorage.getItem("token");
+    if (token) {
+      fetch("http://10.109.249.241:3636/user-info", {
+        headers: { Authorization: `Bearer ${token}` }
       })
-      .catch((error) => {
-        console.error("Erreur lors de la récupération du profil :", error);
-        localStorage.removeItem("token");
-        window.location.href = "login.html";
-      });
+        .then((response) => response.json())
+        .then((data) => {
+          if (data.username && data.email) {
+            document.getElementById("username").textContent = data.username;
+            document.getElementById("email").textContent = data.email;
+          } else {
+            localStorage.removeItem("token");
+            updateAuthButtons();
+            window.location.href = "login.html";
+          }
+        })
+        .catch((error) => {
+          console.error("Erreur lors de la récupération du profil :", error);
+          localStorage.removeItem("token");
+          updateAuthButtons();
+          window.location.href = "login.html";
+        });
+    }
   }
 
   // Gestion de la déconnexion
   if (logoutButton) {
-    logoutButton.addEventListener("click", () => {
+    logoutButton.addEventListener("click", async () => {
+      const token = localStorage.getItem("token");
+      if (token) {
+        try {
+          await fetch("http://10.109.249.241:3636/logout", {
+            method: "POST",
+            headers: { Authorization: `Bearer ${token}` }
+          });
+        } catch (error) {
+          console.error("Erreur lors de la déconnexion :", error);
+        }
+      }
       localStorage.removeItem("token");
       alert("Vous avez été déconnecté.");
+      updateAuthButtons();
       window.location.href = "index.html";
     });
   }
