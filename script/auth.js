@@ -1,18 +1,17 @@
 document.addEventListener("DOMContentLoaded", () => {
   const API_URL = "https://evolutia-back.onrender.com";
+
   const loginButton = document.getElementById("login-button");
   const profileButton = document.getElementById("profile-button");
   const logoutButton = document.getElementById("logout-button");
 
-  // Chemin de base pour les redirections
+  // 🔧 Dossier où se trouvent les pages HTML
   const getBasePath = () => "/html/";
 
-  // Redirige vers une page en ajoutant le chemin de base
   const redirectTo = (page) => {
     window.location.href = getBasePath() + page;
   };
 
-  // Met à jour l'affichage des boutons selon la présence d'un token
   const updateAuthButtons = () => {
     const token = localStorage.getItem("token");
     if (token) {
@@ -30,20 +29,19 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  // Gestion du clic sur "Mon Profil"
   if (profileButton) {
     profileButton.addEventListener("click", (e) => {
       e.preventDefault();
       const token = localStorage.getItem("token");
+      const currentPath = window.location.pathname;
 
-      // ✅ Ne rien faire si on est déjà sur la page profil
-      if (window.location.pathname.includes("profil.html")) return;
+      // ⚠️ Ne redirige pas vers login si on est déjà sur profil.html
+      if (currentPath.includes("profil.html")) return;
 
       redirectTo(token ? "profil.html" : "login.html");
     });
   }
 
-  // Gestion du clic sur "Se connecter"
   if (loginButton) {
     loginButton.addEventListener("click", (e) => {
       e.preventDefault();
@@ -52,7 +50,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Gestion du clic sur "Se déconnecter"
   if (logoutButton) {
     logoutButton.addEventListener("click", async () => {
       const token = localStorage.getItem("token");
@@ -69,11 +66,10 @@ document.addEventListener("DOMContentLoaded", () => {
       localStorage.removeItem("token");
       alert("Vous avez été déconnecté.");
       updateAuthButtons();
-      window.location.href = "/index.html";
+      window.location.href = "/index.html"; // Redirection vers la page d'accueil
     });
   }
 
-  // Chargement du profil utilisateur (uniquement sur profil.html)
   const loadUserProfile = async () => {
     const token = localStorage.getItem("token");
     if (!token) {
@@ -89,13 +85,10 @@ document.addEventListener("DOMContentLoaded", () => {
       const data = await response.json();
 
       if (response.ok && data.username && data.email) {
-        const usernameEl = document.getElementById("username");
-        const emailEl = document.getElementById("email");
-        const offerEl = document.getElementById("selected-offer");
-
-        if (usernameEl) usernameEl.textContent = data.username;
-        if (emailEl) emailEl.textContent = data.email;
-        if (offerEl) offerEl.textContent = data.selectedPlan || "Aucune";
+        document.getElementById("username").textContent = data.username;
+        document.getElementById("email").textContent = data.email;
+        const offerElement = document.getElementById("selected-offer");
+        if (offerElement) offerElement.textContent = data.selectedPlan || "Aucune";
       } else {
         localStorage.removeItem("token");
         updateAuthButtons();
@@ -109,11 +102,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  // Si on est sur la page profil, on charge les infos
   if (window.location.pathname.includes("profil.html")) {
     loadUserProfile();
   }
 
-  // Mise à jour initiale des boutons d'auth
   updateAuthButtons();
 });
