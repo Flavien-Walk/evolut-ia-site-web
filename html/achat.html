@@ -94,7 +94,7 @@
         const planTitle = document.getElementById("product-title").textContent.trim();
 
         try {
-          const response = await fetch("http://10.109.249.241:3636/choose-plan", {
+          const response = await fetch("https://evolutia-back.onrender.com/choose-plan", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",

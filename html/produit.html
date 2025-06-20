@@ -1,238 +1,739 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Catalogue - Évolut'IA</title>
-  <link rel="stylesheet" href="../css/produit.css" />
-  <script src="../script/auth.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalogue - Evolut'IA | Solutions d'apprentissage sur mesure</title>
+    <link rel="stylesheet" href="../css/produit.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="../script/auth.js" defer></script>
 </head>
 <body>
-
-    <!-- Header Section -->
-    <header>
+    <!-- Header Section modernisé -->
+    <header id="main-header">
         <div class="logo">
-            <img src="../images/logo.png" alt="Logo Évolut'IA">
+            <img src="../images/logo.png" alt="Logo Evolut'IA">
+            <span>Evolut'IA</span>
         </div>
         <nav>
             <ul>
                 <li><a href="index.html">Accueil</a></li>
-                <li><a href="produit.html">Produits</a></li>
-                <li><a href="prix.html">Prix</a></li>
+                <li><a href="produit.html" class="active">Solutions</a></li>
+                <li><a href="prix.html">Tarifs</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
         <div class="auth-buttons">
-            <button class="connect-btn" id="login-button" onclick="window.location.href='login.html'">Se connecter</button>
-            <button class="profile-btn" id="profile-button" style="display: none;" onclick="window.location.href='profil.html'">Profil</button>
-            <button class="join-btn">Rejoignez-nous →</button>
+            <button class="connect-btn" id="login-button" onclick="window.location.href='login.html'">
+                <span>Se connecter</span>
+            </button>
+            <button class="profile-btn" id="profile-button" style="display: none;" onclick="window.location.href='profil.html'">
+                <span>Mon Profil</span>
+            </button>
+            <button class="join-btn cta-glow">
+                <span>Essai gratuit</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
         </div>
     </header>
 
-    <!-- Bannière haute -->
-    <section class="catalogue-banner">
-        <img src="../images/banniere3.png" alt="Bannière Méthodologie IA">
-    </section>
-
-    
-
-        <div class="product-grid">
-
-            <!-- Exemple de 8 cartes produit -->
-            <div class="product-card">
-                <div class="product-img"><img src="../images/pack9.png" alt="Méthode 4e"></div>
-                <h3>Semaine Spéciale Révision Bac</h3>
-    
-    <ul>
-        <li>Accès intensif à toutes les matières clés</li>
-        <li>Planning de révision personnalisé</li>
-        <li>Masterclass en live (option)</li>
-        <li>Cartes mentales et fiches téléchargeables</li>
-        <li>Débloque un badge spécial</li>
-    </ul> <br>
-    <p class="price">6,99 € <br> 9,99 € avec masterclass live</p>
-    <a href="achat.html" class="buy-icon">🛒</a>
-
+    <!-- Hero Section Catalogue -->
+    <section class="catalogue-hero">
+        <div class="hero-background">
+            <div class="gradient-overlay"></div>
+            <img src="../images/banniere3.png" alt="Solutions d'apprentissage IA">
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span> 8 solutions d'apprentissage</span>
             </div>
-
-            <div class="product-card new">
-                <div class="product-img"><img src="../images/pack8.png" alt="Méthode 3e"></div>
-                <h3>Semaine Spéciale Révision Brevet</h3>
-    
-    <ul>
-        <li>Accès intensif à toutes les matières clés</li>
-        <li>Planning de révision personnalisé</li>
-        <li>Masterclass en live (option)</li>
-        <li>Cartes mentales et fiches téléchargeables</li>
-        <li>Débloque un badge spécial</li>
-    </ul> <br>
-                <p class="price">6,99 € <br> 9,99 € avec masterclass live</p>
-                <div class="buy-icon">🛒</div>
+            <h1>Trouve la solution parfaite pour <span class="gradient-text">tes objectifs</span></h1>
+            <p class="hero-subtitle">
+                Chaque pack Evolut'IA est conçu pour répondre à un besoin spécifique. 
+                De la révision express aux lacunes ciblées, découvre celui qui te correspond !
+            </p>
+            <div class="hero-filters">
+                <button class="filter-btn active" data-filter="all">
+                    <span> Tous les packs</span>
+                </button>
+                <button class="filter-btn" data-filter="revision">
+                    <span> Révisions</span>
+                </button>
+                <button class="filter-btn" data-filter="support">
+                    <span> Soutien</span>
+                </button>
+                <button class="filter-btn" data-filter="wellbeing">
+                    <span> Bien-être</span>
+                </button>
             </div>
-
-            <div class="product-card">
-                <div class="product-img"><img src="../images/pack10.png" alt="Pack Collège IA"></div>
-                <h3>Pack Objectif Remontée</h3>
-    
-    <ul>
-        <li>IA qui ajuste les exercices chaque semaine</li>
-        <li>Évaluations adaptatives</li>
-        <li>Suivi parent + alertes de progression</li>
-        <li>Conseil hebdo personnalisé</li>
-    </ul> <br>
-                <p class="price">9,99 € </p>
-                <div class="buy-icon">🛒</div>
-            </div>
-
-            <div class="product-card">
-                <div class="product-img"><img src="../images/pack7.png" alt="Jeu Post Ça !"></div>
-                <h3>Semaine Confiance et Méthodo</h3>
-    
-    <ul>
-        <li>Exercices IA + contenus bien-être scolaire </li>
-        <li>Défis à relever et journal de progression</li>
-        <li>Vidéo "booster" chaque jour</li>
-    
-    </ul> <br>
-                <p class="price">5,99 €</p>
-                <div class="buy-icon">🛒</div>
-            </div>
-
-            <div class="product-card">
-                <div class="product-img"><img src="../images/pack 16.png" alt="Atelier IA pour Profs"></div>
-                <h3>Pack Rentrée Zen</h3>
-    
-    <ul>
-        <li>Test de positionnement </li>
-        <li>Planification automatique des révisions</li>
-        <li>Fiche méthodo “s’organiser au collège/lycée</li>
-        <li>1 coaching vidéo motivation + outil de suivi</li>
-    </ul> <br>
-                <p class="price">5,99 €</p>
-                <div class="buy-icon">🛒</div>
-            </div>
-
-            <div class="product-card">
-                <div class="product-img"><img src="../images/pack14.png" alt="Fiches pédagogiques IA"></div>
-                <h3>Pack Anti-lacunes</h3>
-    
-    <ul>
-        <li>Diagnostic ciblé par matière</li>
-        <li>Exercices personnalisés avec IA</li>
-        <li>Fiches de synthèse & quiz par thème</li>
-        <li>Rapport envoyé aux parents</li>
-    </ul> <br>
-    <p class="price">6,99 € / matière
-    </p>
-                <div class="buy-icon">🛒</div>
-            </div>
-
-            <div class="product-card">
-                <div class="product-img"><img src="../images/pack12.png" alt="Kit de démarrage IA"></div>
-                <h3>Pack Sciences</h3>
-    
-    <ul>
-        <li>Accès complet aux matières scientifiques</li>
-        <li>Défis hebdo et quiz chronométrés</li>
-        <li>Corrigés interactifs</li>
-        <li>Masterclass “Réussir son raisonnement scientifique</li>
-    </ul> <br>
-    <p class="price">7,49 € la semaine<br> 12,99 € le mois
-    </p>
-                <div class="buy-icon">🛒</div>
-            </div>
-
-            <div class="product-card new">
-                <div class="product-img"><img src="../images/pack13.png" alt="Masterclass IA"></div>
-                <h3>Pack Tête Claire</h3>
-    
-    <ul>
-        <li>Mini-série de contenus audio : respiration, concentration, confiance</li>
-        <li>Conseils organisation & bien-être scolaire</li>
-        <li>Exercices “lents” : pour apprendre sans pression</li>
-    </ul> <br>
-                <p class="price">4,49 €</p>
-                <div class="buy-icon">🛒</div>
-            </div>
-
         </div>
     </section>
 
+    <!-- Section introduction -->
+    <section class="catalogue-intro">
+        <div class="intro-content">
+            <h2>8 solutions pensées pour ton succès</h2>
+            <p>Chaque pack combine intelligence artificielle avancée et pédagogie moderne pour maximiser tes résultats.</p>
+            <div class="intro-stats">
+                <div class="stat-item">
+                    <span class="stat-icon">⚡</span>
+                    <span class="stat-text">Résultats en 7 jours</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-icon">🎯</span>
+                    <span class="stat-text">100% personnalisé</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-icon">💰</span>
+                    <span class="stat-text">Satisfait ou remboursé</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <footer class="footer-box">
+    <!-- Grille des produits modernisée -->
+    <section class="products-section">
+        <div class="products-container">
+            
+            <!-- Pack Révision BAC -->
+            <div class="product-card premium" data-category="revision">
+                <div class="card-badges">
+                    <span class="badge popular">🔥 Populaire</span>
+                    <span class="badge limited">⏰ Offre limitée</span>
+                </div>
+                <div class="product-visual">
+                    <img src="../images/pack9.png" alt="Révision BAC">
+                    <div class="visual-overlay">
+                        <div class="quick-info">
+                            <span class="duration">📅 1 semaine</span>
+                            <span class="level">🎓 Terminale</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card-content">
+                    <h3>Révision Express BAC</h3>
+                    <p class="card-description">
+                        La solution ultime pour cartonner au BAC ! Révisions intensives avec planning IA et masterclass live.
+                    </p>
+                    
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <span class="feature-icon">✅</span>
+                            <span>Accès intensif toutes matières clés</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">✅</span>
+                            <span>Planning révision personnalisé</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">✅</span>
+                            <span>Masterclass live incluse</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">✅</span>
+                            <span>Cartes mentales téléchargeables</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">✅</span>
+                            <span>Badge spécial débloqué</span>
+                        </div>
+                    </div>
+
+                    <div class="pricing-section">
+                        <div class="price-main">
+                            <span class="price-number">6,99€</span>
+                            <span class="price-label">version standard</span>
+                        </div>
+                        <div class="price-premium">
+                            <span class="price-number">9,99€</span>
+                            <span class="price-label">avec masterclass live</span>
+                        </div>
+                    </div>
+
+                    <button class="add-to-cart-btn premium-btn">
+                        <span> Booster mes révisions</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Pack Révision BREVET -->
+            <div class="product-card new-product" data-category="revision">
+                <div class="card-badges">
+                    <span class="badge new">✨ Nouveau</span>
+                </div>
+                <div class="product-visual">
+                    <img src="../images/pack8.png" alt="Révision BREVET">
+                    <div class="visual-overlay">
+                        <div class="quick-info">
+                            <span class="duration">📅 1 semaine</span>
+                            <span class="level">📚 3ème</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card-content">
+                    <h3>Révision Express BREVET</h3>
+                    <p class="card-description">
+                        Prépare ton BREVET avec sérénité ! Même méthode que le BAC, adaptée au niveau collège.
+                    </p>
+                    
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <span class="feature-icon">✅</span>
+                            <span>Toutes les matières du BREVET</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">✅</span>
+                            <span>Planning adapté au collège</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">✅</span>
+                            <span>Masterclass spécial 3ème</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">✅</span>
+                            <span>Fiches synthèse par matière</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">✅</span>
+                            <span>Badge "Futur lycéen"</span>
+                        </div>
+                    </div>
+
+                    <div class="pricing-section">
+                        <div class="price-main">
+                            <span class="price-number">6,99€</span>
+                            <span class="price-label">version standard</span>
+                        </div>
+                        <div class="price-premium">
+                            <span class="price-number">9,99€</span>
+                            <span class="price-label">avec masterclass live</span>
+                        </div>
+                    </div>
+
+                    <button class="add-to-cart-btn">
+                        <span> Préparer mon BREVET</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Pack Objectif Remontée -->
+            <div class="product-card" data-category="support">
+                <div class="card-badges">
+                    <span class="badge guarantee">✅ Résultats garantis</span>
+                </div>
+                <div class="product-visual">
+                    <img src="../images/pack10.png" alt="Objectif Remontée">
+                    <div class="visual-overlay">
+                        <div class="quick-info">
+                            <span class="duration">📅 Suivi continu</span>
+                            <span class="level">📊 Tous niveaux</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card-content">
+                    <h3>Objectif Remontée</h3>
+                    <p class="card-description">
+                        Le pack miracle pour remonter tes notes ! IA adaptative + suivi parental pour des résultats durables.
+                    </p>
+                    
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <span class="feature-icon">✅</span>
+                            <span>IA ajuste les exercices chaque semaine</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">✅</span>
+                            <span>Évaluations adaptatives</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">✅</span>
+                            <span>Suivi parent + alertes progression</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">✅</span>
+                            <span>Conseil hebdo personnalisé</span>
+                        </div>
+                    </div>
+
+                    <div class="pricing-section">
+                        <div class="price-main centered">
+                            <span class="price-number">9,99€</span>
+                            <span class="price-label">par mois</span>
+                        </div>
+                    </div>
+
+                    <button class="add-to-cart-btn">
+                        <span> Remonter mes notes</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Pack Confiance et Méthodo -->
+            <div class="product-card" data-category="wellbeing">
+                <div class="card-badges">
+                    <span class="badge wellness">🧘 Bien-être</span>
+                </div>
+                <div class="product-visual">
+                    <img src="../images/pack7.png" alt="Confiance et Méthodo">
+                    <div class="visual-overlay">
+                        <div class="quick-info">
+                            <span class="duration">📅 1 semaine</span>
+                            <span class="level">💪 Motivation</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card-content">
+                    <h3>Confiance & Méthodo</h3>
+                    <p class="card-description">
+                        Retrouve confiance en toi et acquiers les bonnes méthodes pour réussir durablement !
+                    </p>
+                    
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <span class="feature-icon">✅</span>
+                            <span>Exercices IA + bien-être scolaire</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">✅</span>
+                            <span>Défis quotidiens à relever</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">✅</span>
+                            <span>Journal de progression</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">✅</span>
+                            <span>Vidéo motivation quotidienne</span>
+                        </div>
+                    </div>
+
+                    <div class="pricing-section">
+                        <div class="price-main centered">
+                            <span class="price-number">5,99€</span>
+                            <span class="price-label">pack complet</span>
+                        </div>
+                    </div>
+
+                    <button class="add-to-cart-btn">
+                        <span> Booster ma confiance</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Pack Rentrée Zen -->
+            <div class="product-card" data-category="support">
+                <div class="card-badges">
+                    <span class="badge seasonal">🍂 Rentrée</span>
+                </div>
+                <div class="product-visual">
+                    <img src="../images/pack 16.png" alt="Rentrée Zen">
+                    <div class="visual-overlay">
+                        <div class="quick-info">
+                            <span class="duration">📅 Dès la rentrée</span>
+                            <span class="level">🎒 Organisation</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card-content">
+                    <h3>Rentrée Zen</h3>
+                    <p class="card-description">
+                        Démarre l'année scolaire du bon pied ! Organisation, planification et coaching pour une rentrée réussie.
+                    </p>
+                    
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <span class="feature-icon">✅</span>
+                            <span>Test de positionnement complet</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">✅</span>
+                            <span>Planification auto des révisions</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">✅</span>
+                            <span>Fiche méthodo organisation</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">✅</span>
+                            <span>Coaching vidéo motivation</span>
+                        </div>
+                    </div>
+
+                    <div class="pricing-section">
+                        <div class="price-main centered">
+                            <span class="price-number">5,99€</span>
+                            <span class="price-label">pack rentrée</span>
+                        </div>
+                    </div>
+
+                    <button class="add-to-cart-btn">
+                        <span> Préparer ma rentrée</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Pack Anti-lacunes -->
+            <div class="product-card" data-category="support">
+                <div class="card-badges">
+                    <span class="badge targeted">🎯 Ciblé</span>
+                </div>
+                <div class="product-visual">
+                    <img src="../images/pack14.png" alt="Anti-lacunes">
+                    <div class="visual-overlay">
+                        <div class="quick-info">
+                            <span class="duration">📅 Par matière</span>
+                            <span class="level">🔍 Diagnostic</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card-content">
+                    <h3>Anti-Lacunes Ciblé</h3>
+                    <p class="card-description">
+                        Identifie et comble tes lacunes précisément ! Diagnostic IA + exercices personnalisés par matière.
+                    </p>
+                    
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <span class="feature-icon">✅</span>
+                            <span>Diagnostic ciblé par matière</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">✅</span>
+                            <span>Exercices personnalisés avec IA</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">✅</span>
+                            <span>Fiches synthèse & quiz thématiques</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">✅</span>
+                            <span>Rapport détaillé aux parents</span>
+                        </div>
+                    </div>
+
+                    <div class="pricing-section">
+                        <div class="price-main centered">
+                            <span class="price-number">6,99€</span>
+                            <span class="price-label">par matière</span>
+                        </div>
+                    </div>
+
+                    <button class="add-to-cart-btn">
+                        <span> Combler mes lacunes</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Pack Sciences -->
+            <div class="product-card bestseller" data-category="support">
+                <div class="card-badges">
+                    <span class="badge bestseller">⭐ Best Seller</span>
+                </div>
+                <div class="product-visual">
+                    <img src="../images/pack12.png" alt="Pack Sciences">
+                    <div class="visual-overlay">
+                        <div class="quick-info">
+                            <span class="duration">📅 Flexible</span>
+                            <span class="level">🧪 Sciences</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card-content">
+                    <h3>Pack Sciences Pro</h3>
+                    <p class="card-description">
+                        La référence pour exceller en sciences ! Accès complet aux matières scientifiques avec défis hebdo.
+                    </p>
+                    
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <span class="feature-icon">✅</span>
+                            <span>Accès complet matières scientifiques</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">✅</span>
+                            <span>Défis hebdo & quiz chronométrés</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">✅</span>
+                            <span>Corrigés interactifs détaillés</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">✅</span>
+                            <span>Masterclass raisonnement scientifique</span>
+                        </div>
+                    </div>
+
+                    <div class="pricing-section">
+                        <div class="price-main">
+                            <span class="price-number">12,99€</span>
+                            <span class="price-label">par semaine</span>
+                        </div>
+                        <div class="price-premium">
+                            
+                            
+                        </div>
+                    </div>
+
+                    <button class="add-to-cart-btn bestseller-btn">
+                        <span> Maîtriser les sciences</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Pack Tête Claire -->
+            <div class="product-card zen-product" data-category="wellbeing">
+                <div class="card-badges">
+                    <span class="badge zen">🧘 Zen</span>
+                    <span class="badge new">✨ Nouveau</span>
+                </div>
+                <div class="product-visual">
+                    <img src="../images/pack13.png" alt="Tête Claire">
+                    <div class="visual-overlay">
+                        <div class="quick-info">
+                            <span class="duration">📅 Audio série</span>
+                            <span class="level">🧘 Détente</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card-content">
+                    <h3>Tête Claire</h3>
+                    <p class="card-description">
+                        Apprendre sans stress, c'est possible ! Mini-série audio pour développer concentration et bien-être.
+                    </p>
+                    
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <span class="feature-icon">✅</span>
+                            <span>Série audio: respiration & concentration</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">✅</span>
+                            <span>Conseils organisation & bien-être</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">✅</span>
+                            <span>Exercices "lents" sans pression</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">✅</span>
+                            <span>Techniques de gestion du stress</span>
+                        </div>
+                    </div>
+
+                    <div class="pricing-section">
+                        <div class="price-main centered">
+                            <span class="price-number">4,49€</span>
+                            <span class="price-label">série complète</span>
+                        </div>
+                    </div>
+
+                    <button class="add-to-cart-btn zen-btn">
+                        <span> Retrouver ma sérénité</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="catalogue-cta">
+        <div class="cta-content">
+            <h2>Pas sûr de ton choix ?</h2>
+            <p>Teste tous nos packs gratuitement pendant 7 jours !</p>
+            <div class="cta-buttons">
+                <button class="cta-btn primary">
+                    <span> Essayer gratuitement</span>
+                </button>
+                <button class="cta-btn secondary">
+                    <span> Parler à un conseiller</span>
+                </button>
+            </div>
+            <div class="guarantee-text">
+                <span>✅ 7 jours gratuits • 💰 Satisfait ou remboursé • 🚫 Aucun engagement</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer modernisé -->
+    <footer class="footer-modern">
         <div class="footer-content">
-      
-          <!-- GAUCHE : inscription -->
-          <div class="footer-left">
-            <button class="signup-btn">S'inscrire</button>
-            <div class="newsletter-box">
-              <p>Inscris-toi à la newsletter</p>
-              <input type="email" placeholder="Ton email..." />
-              <button class="newsletter-btn">OK</button>
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <div class="brand-logo">
+                        <span class="brand-icon"></span>
+                        <span class="brand-name">Evolut'IA</span>
+                    </div>
+                    <p class="brand-description">
+                        L'intelligence artificielle au service de ton succès scolaire.
+                    </p>
+                    <div class="newsletter-signup">
+                        <h4>Reste informé des nouveautés</h4>
+                        <div class="newsletter-form">
+                            <input type="email" placeholder="ton.email@exemple.com">
+                            <button class="newsletter-btn">S'abonner</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Solutions</h4>
+                        <a href="produit.html">Tous nos packs</a>
+                        <a href="prix.html">Tarifs</a>
+                        <a href="#">Essai gratuit</a>
+                        <a href="#">Étudiants</a>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>Entreprise</h4>
+                        <a href="#">À propos</a>
+                        <a href="contact.html">Contact</a>
+                        <a href="#">Carrières</a>
+                        <a href="#">Presse</a>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>Support</h4>
+                        <a href="#">Centre d'aide</a>
+                        <a href="#">Tutoriels</a>
+                        <a href="#">FAQ</a>
+                        <a href="#">Status</a>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>Légal</h4>
+                        <a href="#">Confidentialité</a>
+                        <a href="#">CGU</a>
+                        <a href="#">Cookies</a>
+                        <a href="#">RGPD</a>
+                    </div>
+                </div>
             </div>
-          </div>
-      
-          <!-- CENTRE : liens organisés -->
-          <div class="footer-links-columns">
-      
-            <div class="footer-column">
-              <h4>Produits</h4>
-              <a href="produit.html">Produits</a>
-              <a href="prix.html">Tarifs</a>
-              <a href="login.html">Connexion</a>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Evolut'IA. Tous droits réservés.</p>
+                <div class="social-links">
+                    <a href="#">Twitter</a>
+                    <a href="#">LinkedIn</a>
+                    <a href="#">Instagram</a>
+                </div>
             </div>
-      
-            <div class="footer-column">
-              <h4>À propos de nous</h4>
-              <a href="#">À propos d’Évolut’IA</a>
-              <a href="contact.html">Contactez-nous</a>
-              <a href="#">Nos engagements</a>
-            </div>
-      
-            <div class="footer-column">
-              <h4>Ressources</h4>
-              <a href="#">Centre d’aide</a>
-              <a href="#">Tutoriel</a>
-              <a href="#">Newsletter</a>
-            </div>
-      
-          </div>
-      
-          <!-- LETTRES EN BAS -->
-          <div class="footer-brand">
-            <div class="letter">E</div>
-            <div class="letter">V</div>
-            <div class="letter">O</div>
-            <div class="letter">L</div>
-            <div class="letter">U</div>
-            <div class="letter">T</div>
-            <div class="letter">’</div>
-            <div class="letter">I</div>
-            <div class="letter">A</div>
-          </div>
-      
         </div>
-      </footer>
-      
+    </footer>
 
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('main-header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
 
+        // Filter system
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active from all buttons
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                // Add active to clicked button
+                btn.classList.add('active');
+                
+                const filter = btn.dataset.filter;
+                const cards = document.querySelectorAll('.product-card');
+                
+                cards.forEach(card => {
+                    if (filter === 'all' || card.dataset.category === filter) {
+                        card.style.display = 'block';
+                        card.style.animation = 'fadeInScale 0.5s ease-out';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
 
+        // Smooth animations on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
 
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'slideInUp 0.6s ease-out';
+                }
+            });
+        }, observerOptions);
 
+        // Observe all product cards
+        document.querySelectorAll('.product-card').forEach(card => {
+            observer.observe(card);
+        });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        // Add to cart button effects
+        document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                // Add loading state
+                btn.classList.add('loading');
+                btn.style.pointerEvents = 'none';
+                
+                // Simulate API call
+                setTimeout(() => {
+                    btn.classList.remove('loading');
+                    btn.style.pointerEvents = 'auto';
+                    
+                    // Show success feedback
+                    btn.innerHTML = '<span>✅ Ajouté au panier</span>';
+                    btn.style.background = 'var(--success-color, #22c55e)';
+                    
+                    setTimeout(() => {
+                        // Reset button after 2 seconds
+                        location.reload();
+                    }, 2000);
+                }, 1500);
+            });
+        });
+    </script>
 </body>
 </html>

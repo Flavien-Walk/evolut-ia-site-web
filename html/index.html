@@ -3,254 +3,560 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Évolut'IA</title>
+    <title>Evolut'IA - L'IA qui révolutionne ton apprentissage</title>
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="../script/auth.js" defer></script>
 </head>
 
 <body>
-    <!-- Header Section -->
-    <header>
+    <!-- Header Section amélioré -->
+    <header id="main-header">
         <div class="logo">
-            <img src="../images/logo.png" alt="Logo Évolut'IA">
+            <img src="../images/logo.png" alt="Logo Evolut'IA">
+            <span>Evolut'IA</span>
         </div>
         <nav>
             <ul>
                 <li><a href="index.html">Accueil</a></li>
-                <li><a href="produit.html">Produits</a></li>
-                <li><a href="prix.html">Prix</a></li>
+                <li><a href="produit.html">Solutions</a></li>
+                <li><a href="prix.html">Tarifs</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
         <div class="auth-buttons">
-            <button class="connect-btn" id="login-button" onclick="window.location.href='login.html'">Se connecter</button>
-            <button class="profile-btn" id="profile-button" style="display: none;" onclick="window.location.href='profil.html'">Profil</button>
-            <button class="join-btn">Rejoignez-nous →</button>
+            <button class="connect-btn" id="login-button" onclick="window.location.href='login.html'">
+                <span>Se connecter</span>
+            </button>
+            <button class="profile-btn" id="profile-button" style="display: none;" onclick="window.location.href='profil.html'">
+                <span>Mon Profil</span>
+            </button>
+            <button class="join-btn cta-glow">
+                <span>Commencer gratuitement</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero Section révolutionné -->
     <section class="hero">
-        <div class="hero-content">
-            <h1>Bienvenue sur Évolut'IA</h1>
-            <p>Casser les barrières de l’éducation pour un apprentissage au cas par cas !</p>
-            <div class="cta-buttons">
-                <button class="cta-btn primary-btn">REJOIGNEZ-NOUS</button>
-                <button class="cta-btn secondary-btn">En savoir plus</button>
+        <div class="hero-background">
+            <div class="floating-elements">
+                <div class="float-element">📚</div>
+                <div class="float-element">🎯</div>
+                <div class="float-element">⚡</div>
+                <div class="float-element">🚀</div>
+                <div class="float-element">💡</div>
             </div>
         </div>
-        <div class="hero-image">
-            <img src="../images/enfantassis.png" alt="Illustration d'apprentissage personnalisé">
+        
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span>🔥 +10,000 étudiants nous font confiance</span>
+            </div>
+            <h1>
+                L'IA qui <span class="gradient-text">révolutionne</span><br>
+                ton apprentissage
+            </h1>
+            <p class="hero-subtitle">
+                Fini les méthodes d'apprentissage obsolètes ! Découvre une éducation 100% personnalisée 
+                qui s'adapte à TON rythme, TES difficultés et TES objectifs.
+            </p>
+            
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">97%</span>
+                    <span class="stat-label">de réussite</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">2x</span>
+                    <span class="stat-label">plus rapide</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">24/7</span>
+                    <span class="stat-label">disponible</span>
+                </div>
+            </div>
+
+            <div class="cta-buttons">
+                <button class="cta-btn primary-btn pulse-animation">
+                    <span>Démarrer mon parcours</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                        <path d="M8 5L16 12L8 19" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                </button>
+                <button class="cta-btn secondary-btn">
+                    <span>🎬 Voir la démo (2min)</span>
+                </button>
+            </div>
+
+            <div class="trust-indicators">
+                <span>✨ Essai gratuit • 🚫 Aucune carte requise • ⏱️ Résultats en 7 jours</span>
+            </div>
+        </div>
+        
+        <div class="hero-visual">
+            <div class="hero-image-container">
+                <img src="../images/enfantassis.png" alt="Apprentissage personnalisé avec l'IA">
+                <div class="image-overlay">
+                    <div class="ai-tooltip">
+                        <span>🤖 IA en action</span>
+                        <div class="tooltip-text">Analyse tes forces et faiblesses en temps réel</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Notre Application Section -->
+    <!-- Section Social Proof -->
+    <section class="social-proof">
+        <div class="marquee">
+            <div class="marquee-content">
+                <span>"Game changer pour mes révisions !" - Sarah</span>
+                <span>"J'ai gagné 3 points de moyenne !" - Thomas</span>
+                <span>"Enfin une méthode qui marche !" - Emma</span>
+                <span>"Mon prof n'en revient pas !" - Lucas</span>
+                <span>"Addictif mais dans le bon sens !" - Léa</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Notre Application Section transformée -->
     <section class="application">
         <div class="application-content">
-            <div class="section-bar"></div>
-            <h2>Notre application</h2>
-            <p>Évolut'IA se consacre à transformer l'expérience d'apprentissage en fournissant une assistance personnalisée aux utilisateurs grâce à une technologie de pointe. Notre mission est de faciliter l'accès à une éducation équitable pour tous, indépendamment des obstacles ou des difficultés d'apprentissage.</p>
-            <a href="#" class="learn-more">En savoir plus →</a>
+            <div class="section-tag">💡 Innovation</div>
+            <h2>Une IA qui comprend vraiment tes besoins</h2>
+            <p class="enhanced-description">
+                Evolut'IA utilise l'intelligence artificielle de dernière génération pour créer 
+                <strong>ton jumeau numérique d'apprentissage</strong>. Elle analyse tes forces, 
+                identifie tes lacunes et crée un parcours 100% sur-mesure qui évolue avec toi.
+            </p>
+            
+            <div class="features-list">
+                <div class="feature-item">
+                    <span class="feature-icon">✅</span>
+                    <span>Diagnostic personnalisé en 5 minutes</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">✅</span>
+                    <span>Adaptation en temps réel à tes progrès</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">✅</span>
+                    <span>Résultats visibles dès la première semaine</span>
+                </div>
+            </div>
+            
+            <button class="learn-more-btn">
+                <span>Découvrir comment ça marche</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
         </div>
-        <div class="application-image">
-            <img src="../images/presentation.png" alt="Présentation de l'application">
+        
+        <div class="application-visual">
+            <div class="app-showcase">
+                <img src="../images/presentation.png" alt="Interface Evolut'IA">
+                <div class="app-features">
+                    <div class="feature-popup popup-1">
+                        <span class="popup-icon">📊</span>
+                        <span class="popup-text">Analyse en temps réel</span>
+                    </div>
+                    <div class="feature-popup popup-2">
+                        <span class="popup-icon">🎓</span>
+                        <span class="popup-text">Contenu adaptatif</span>
+                    </div>
+                    <div class="feature-popup popup-3">
+                        <span class="popup-icon">🏆</span>
+                        <span class="popup-text">Suivi des progrès</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Partenaires Section -->
+    <!-- Partenaires Section modernisée -->
     <section class="partners">
-        <img src="../images/epitechlogo.png" alt="Epitech" class="partner-logo">
-        <img src="../images/qualiopilogo.png" alt="Qualiopi" class="partner-logo">
-    </section>
-
-    <!-- Éducation au cas par cas -->
-    <section class="education">
-        <p class="section-label">Nous intégrons</p>
-        <h2>Une éducation au cas par cas</h2>
-        <p class="section-subtitle">
-            Problems trying to resolve the conflict between<br />
-            the two major realms of Classical physics: Newtonian mechanics
-        </p>
-
-        <div class="education-features">
-            <div class="feature-box decale-haut">
-                <div class="icon">🏫</div>
-                <h3>IA INTÉGRÉ</h3>
-                <p>lorem ipsum</p>
-            </div>
-            <div class="feature-box decale-bas">
-                <div class="icon">🧠</div>
-                <h3>Exercices adaptés</h3>
-                <p>lorem ipsum</p>
-            </div>
-            <div class="feature-box decale-haut">
-                <div class="icon">🎓</div>
-                <h3>Vidéos expliquées</h3>
-                <p>lorem ipsum</p>
-            </div>
-            <div class="feature-box decale-bas">
-                <div class="icon">📊</div>
-                <h3>2,769 online courses</h3>
-                <p>lorem ipsum</p>
-            </div>
+        <p class="partners-text">Ils nous font confiance :</p>
+        <div class="partners-logos">
+            <img src="../images/epitechlogo.png" alt="Epitech" class="partner-logo">
+            <img src="../images/qualiopilogo.png" alt="Qualiopi" class="partner-logo">
         </div>
     </section>
 
-    <!-- Produits -->
-    <section class="products">
-        <p class="section-label">Produits</p>
-        <h2>Trouvez le produit qui vous correspond</h2>
-        <p class="section-subtitle">
-            Prêt à apprendre et à évoluer à partir de tes connaissances actuelles ?<br />
-            Choisis ton parcours et commence ton aventure !
-        </p>
-
-        <div class="product-cards">
-            <div class="product-card">
-                <img src="../images/pack9.png" alt="Semaine Spéciale Révision Bac" />
-                <div class="card-content">
-                    <h3>Semaine Spéciale Révision Bac</h3>
-                    <p class="price">6,99 € <br> 9,99 € avec masterclass live</p>
-                    <a href="#" class="card-btn">En savoir plus →</a>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <div class="badge">Best seller</div>
-                <img src="../images/pack12.png" alt="L’Avancé" />
-                <div class="card-content">
-                    <h3>Pack Sciences</h3>
-                    <p class="price">7,49 € la semaine<br> 12,99 € le mois</p>
-                    <a href="#" class="card-btn">En savoir plus →</a>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <img src="../images/pack10.png" alt="Enseignants" />
-                <div class="card-content">
-                    <h3>Pack Objectif Remontée</h3>
-                    <p class="price">9,99 €</p>
-                    <a href="#" class="card-btn">En savoir plus →</a>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <img src="../images/pack14.png" alt="Professionnels de santé" />
-                <div class="card-content">
-                    <h3>Pack Anti-lacunes</h3>
-                    <p class="price">6,99 € / matière</p>
-                    <a href="#" class="card-btn">En savoir plus →</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Témoignages -->
-    <section class="testimonials">
-        <div class="testimonial-header">
-            <p class="section-subtitle">Testimonials</p>
-            <h2 class="section-title">Nos avis</h2>
-            <p class="section-description">
-                Découvrez ce que pensent ceux qui ont déjà franchi le pas.<br>
-                Des avis authentiques qui témoignent de leur expérience !
+    <!-- Pourquoi nous choisir - Section transformée -->
+    <section class="why-choose-us">
+        <div class="section-header">
+            <span class="section-tag">🚀 Avantages</span>
+            <h2>Pourquoi Evolut'IA change la donne ?</h2>
+            <p class="section-subtitle">
+                Découvre les 4 piliers qui font d'Evolut'IA la solution d'apprentissage 
+                la plus efficace du marché.
             </p>
         </div>
 
-        <div class="carousel-container">
-            <div class="carousel-track">
-                <div class="testimonial-card">
-                    <img src="../images/fille1.jpg" alt="Client 1">
-                    <p>“Plateforme très intuitive, je recommande à 100 %.”</p>
-                    <div class="stars">★★★★★</div>
-                    <div class="name">Regina Miles</div>
+        <div class="benefits-grid">
+            <div class="benefit-card card-ai">
+                <div class="card-header">
+                    <div class="benefit-icon">🤖</div>
+                    <h3>IA Hyper-Intelligente</h3>
                 </div>
+                <p>Notre IA apprend de tes erreurs et s'améliore à chaque interaction pour créer l'expérience d'apprentissage parfaite.</p>
+                <div class="card-glow"></div>
+            </div>
 
-                <div class="testimonial-card">
-                    <img src="../images/gars.jpg" alt="Client 2">
-                    <p>“Un gain de temps énorme pour mes révisions.”</p>
-                    <div class="stars">★★★★★</div>
-                    <div class="name">Alex Dubois</div>
+            <div class="benefit-card card-adaptive">
+                <div class="card-header">
+                    <div class="benefit-icon">⚡</div>
+                    <h3>Contenu Ultra-Adaptatif</h3>
                 </div>
+                <p>Exercices, vidéos et quiz qui s'ajustent automatiquement à ton niveau et à ta vitesse d'apprentissage.</p>
+                <div class="card-glow"></div>
+            </div>
 
-                <div class="testimonial-card">
-                    <img src="../images/fille2.jpg" alt="Client 3">
-                    <p>“Très bon rapport qualité/prix, support au top.”</p>
-                    <div class="stars">★★★★★</div>
-                    <div class="name">Sophie Leroy</div>
+            <div class="benefit-card card-gamified">
+                <div class="card-header">
+                    <div class="benefit-icon">🎮</div>
+                    <h3>Gamification Addictive</h3>
                 </div>
+                <p>Système de points, badges et défis qui transforment l'apprentissage en jeu captivant.</p>
+                <div class="card-glow"></div>
+            </div>
 
-                <div class="testimonial-card">
-                    <img src="../images/gars2.jpg" alt="Client 4">
-                    <p>“J’ai progressé en quelques semaines seulement.”</p>
-                    <div class="stars">★★★★★</div>
-                    <div class="name">Mickaël R.</div>
+            <div class="benefit-card card-results">
+                <div class="card-header">
+                    <div class="benefit-icon">📈</div>
+                    <h3>Résultats Garantis</h3>
                 </div>
+                <p>97% de nos utilisateurs améliorent leurs notes en moins de 30 jours ou remboursé.</p>
+                <div class="card-glow"></div>
             </div>
         </div>
     </section>
 
-
-
-
-    <footer class="footer-box">
-        <div class="footer-content">
-      
-          <!-- GAUCHE : inscription -->
-          <div class="footer-left">
-            <button class="signup-btn">S'inscrire</button>
-            <div class="newsletter-box">
-              <p>Inscris-toi à la newsletter</p>
-              <input type="email" placeholder="Ton email..." />
-              <button class="newsletter-btn">OK</button>
-            </div>
-          </div>
-      
-          <!-- CENTRE : liens organisés -->
-          <div class="footer-links-columns">
-      
-            <div class="footer-column">
-              <h4>Produits</h4>
-              <a href="produit.html">Produits</a>
-              <a href="prix.html">Tarifs</a>
-              <a href="login.html">Connexion</a>
-            </div>
-      
-            <div class="footer-column">
-              <h4>À propos de nous</h4>
-              <a href="#">À propos d’Évolut’IA</a>
-              <a href="contact.html">Contactez-nous</a>
-              <a href="#">Nos engagements</a>
-            </div>
-      
-            <div class="footer-column">
-              <h4>Ressources</h4>
-              <a href="#">Centre d’aide</a>
-              <a href="#">Tutoriel</a>
-              <a href="#">Newsletter</a>
-            </div>
-      
-          </div>
-      
-          <!-- LETTRES EN BAS -->
-          <div class="footer-brand">
-            <div class="letter">E</div>
-            <div class="letter">V</div>
-            <div class="letter">O</div>
-            <div class="letter">L</div>
-            <div class="letter">U</div>
-            <div class="letter">T</div>
-            <div class="letter">’</div>
-            <div class="letter">I</div>
-            <div class="letter">A</div>
-          </div>
-      
+    <!-- Produits Section révolutionnée -->
+    <section class="products">
+        <div class="section-header">
+            <span class="section-tag">💎 Offres</span>
+            <h2>Choisis ton parcours vers l'excellence</h2>
+            <p class="section-subtitle">
+                Chaque pack est conçu pour des objectifs spécifiques. 
+                Quel que soit ton niveau, on a la solution parfaite pour toi !
+            </p>
         </div>
-      </footer>
-      
 
+        <div class="product-grid">
+            <div class="product-card card-starter">
+                <div class="card-badge">🎯 Populaire</div>
+                <img src="../images/pack9.png" alt="Pack Révision Express">
+                <div class="card-content">
+                    <h3>Révision Express BAC</h3>
+                    <div class="price-section">
+                        <span class="price-main">6,99€</span>
+                        <span class="price-period">/ semaine</span>
+                    </div>
+                    <div class="price-bonus">+ Masterclass live à 9,99€</div>
+                    
+                    <ul class="features-list">
+                        <li>✅ Révisions ciblées par matière</li>
+                        <li>✅ Quiz adaptatifs</li>
+                        <li>✅ Planning personnalisé</li>
+                    </ul>
+                    
+                    <button class="product-cta">
+                        <span>Commencer maintenant</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
 
-    
+            <div class="product-card card-premium featured">
+                <div class="card-badge">🔥 Best Seller</div>
+                <img src="../images/pack12.png" alt="Pack Sciences Premium">
+                <div class="card-content">
+                    <h3>Pack Sciences Pro</h3>
+                    <div class="price-section">
+                        <span class="price-main">7,49€</span>
+                        <span class="price-period">/ semaine</span>
+                    </div>
+                    <div class="price-bonus">ou 12,99€ / mois</div>
+                    
+                    <ul class="features-list">
+                        <li>✅ Toutes les matières scientifiques</li>
+                        <li>✅ IA avancée + coaching</li>
+                        <li>✅ Accès prioritaire aux nouveautés</li>
+                        <li>✅ Support 24/7</li>
+                    </ul>
+                    
+                    <button class="product-cta premium-cta">
+                        <span>Devenir Pro</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
 
+            <div class="product-card card-booster">
+                <img src="../images/pack10.png" alt="Pack Remontée de Notes">
+                <div class="card-content">
+                    <h3>Objectif Remontée</h3>
+                    <div class="price-section">
+                        <span class="price-main">9,99€</span>
+                        <span class="price-period">/ mois</span>
+                    </div>
+                    
+                    <ul class="features-list">
+                        <li>✅ Plan de remontée personnalisé</li>
+                        <li>✅ Suivi intensif des progrès</li>
+                        <li>✅ Motivation quotidienne</li>
+                    </ul>
+                    
+                    <button class="product-cta">
+                        <span>Remonter mes notes</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="product-card card-specific">
+                <img src="../images/pack14.png" alt="Pack Anti-lacunes">
+                <div class="card-content">
+                    <h3>Anti-Lacunes Ciblé</h3>
+                    <div class="price-section">
+                        <span class="price-main">6,99€</span>
+                        <span class="price-period">/ matière</span>
+                    </div>
+                    
+                    <ul class="features-list">
+                        <li>✅ Diagnostic précis des lacunes</li>
+                        <li>✅ Exercices de remédiation</li>
+                        <li>✅ Suivi personnalisé</li>
+                    </ul>
+                    
+                    <button class="product-cta">
+                        <span>Combler mes lacunes</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="products-cta">
+            <p>🎁 <strong>Offre spéciale :</strong> 7 jours d'essai gratuit sur tous nos packs !</p>
+            <button class="global-cta">
+                <span>Commencer mon essai gratuit</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Témoignages Section modernisée -->
+    <section class="testimonials">
+        <div class="section-header">
+            <span class="section-tag">⭐ Témoignages</span>
+            <h2>Ils ont transformé leurs résultats</h2>
+            <p class="section-subtitle">
+                Découvre comment nos étudiants sont passés de la galère aux félicitations 
+                grâce à Evolut'IA.
+            </p>
+        </div>
+
+        <div class="testimonials-container">
+            <div class="testimonial-card testimonial-premium">
+                <div class="testimonial-header">
+                    <img src="../images/fille1.jpg" alt="Sarah M.">
+                    <div class="user-info">
+                        <h4>Sarah M.</h4>
+                        <span class="user-level">Terminale S</span>
+                    </div>
+                    <div class="rating">
+                        <span class="stars">⭐⭐⭐⭐⭐</span>
+                    </div>
+                </div>
+                <p class="testimonial-text">
+                    "Grâce à Evolut'IA, je suis passée de 8/20 à 16/20 en maths en seulement 6 semaines ! 
+                    L'IA a identifié mes lacunes et m'a proposé exactement ce dont j'avais besoin."
+                </p>
+                <div class="result-highlight">
+                    <span class="improvement">+8 points en maths</span>
+                </div>
+            </div>
+
+            <div class="testimonial-card testimonial-premium">
+                <div class="testimonial-header">
+                    <img src="../images/gars.jpg" alt="Thomas L.">
+                    <div class="user-info">
+                        <h4>Thomas L.</h4>
+                        <span class="user-level">1ère ES</span>
+                    </div>
+                    <div class="rating">
+                        <span class="stars">⭐⭐⭐⭐⭐</span>
+                    </div>
+                </div>
+                <p class="testimonial-text">
+                    "Fini les heures de révision inefficaces ! Avec le planning IA, j'optimise mon temps 
+                    et je progresse 3x plus vite. Mes parents n'en reviennent pas !"
+                </p>
+                <div class="result-highlight">
+                    <span class="improvement">3x plus efficace</span>
+                </div>
+            </div>
+
+            <div class="testimonial-card testimonial-premium">
+                <div class="testimonial-header">
+                    <img src="../images/fille2.jpg" alt="Emma R.">
+                    <div class="user-info">
+                        <h4>Emma R.</h4>
+                        <span class="user-level">Seconde</span>
+                    </div>
+                    <div class="rating">
+                        <span class="stars">⭐⭐⭐⭐⭐</span>
+                    </div>
+                </div>
+                <p class="testimonial-text">
+                    "J'étais en échec scolaire, maintenant je suis dans les premiers de ma classe. 
+                    L'IA m'a redonné confiance et m'a montré que j'étais capable !"
+                </p>
+                <div class="result-highlight">
+                    <span class="improvement">Top 3 de sa classe</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="social-proof-stats">
+            <div class="stat-box">
+                <span class="stat-number">10,847</span>
+                <span class="stat-label">étudiants actifs</span>
+            </div>
+            <div class="stat-box">
+                <span class="stat-number">97%</span>
+                <span class="stat-label">d'amélioration</span>
+            </div>
+            <div class="stat-box">
+                <span class="stat-number">4.9/5</span>
+                <span class="stat-label">note moyenne</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final Section -->
+    <section class="final-cta">
+        <div class="cta-content">
+            <h2>Prêt à révolutionner tes résultats ?</h2>
+            <p>Rejoins les milliers d'étudiants qui ont déjà transformé leur scolarité avec Evolut'IA</p>
+            
+            <div class="cta-buttons-final">
+                <button class="final-cta-btn primary">
+                    <span> Commencer gratuitement</span>
+                </button>
+                <button class="final-cta-btn secondary">
+                    <span> Parler à un conseiller</span>
+                </button>
+            </div>
+            
+            <div class="guarantee">
+                <span>✅ 7 jours gratuits • 💰 Satisfait ou remboursé • 🔒 Données sécurisées</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer modernisé -->
+    <footer class="footer-modern">
+        <div class="footer-content">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <div class="brand-logo">
+                        <span class="brand-icon"></span>
+                        <span class="brand-name">Evolut'IA</span>
+                    </div>
+                    <p class="brand-description">
+                        L'intelligence artificielle au service de ton succès scolaire.
+                    </p>
+                    <div class="newsletter-signup">
+                        <h4>Reste informé des nouveautés</h4>
+                        <div class="newsletter-form">
+                            <input type="email" placeholder="ton.email@exemple.com">
+                            <button class="newsletter-btn">S'abonner</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Solutions</h4>
+                        <a href="produit.html">Tous nos packs</a>
+                        <a href="prix.html">Tarifs</a>
+                        <a href="#">Essai gratuit</a>
+                        <a href="#">Étudiants</a>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>Entreprise</h4>
+                        <a href="#">À propos</a>
+                        <a href="contact.html">Contact</a>
+                        <a href="#">Carrières</a>
+                        <a href="#">Presse</a>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>Support</h4>
+                        <a href="#">Centre d'aide</a>
+                        <a href="#">Tutoriels</a>
+                        <a href="#">FAQ</a>
+                        <a href="#">Status</a>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>Légal</h4>
+                        <a href="#">Confidentialité</a>
+                        <a href="#">CGU</a>
+                        <a href="#">Cookies</a>
+                        <a href="#">RGPD</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Evolut'IA. Tous droits réservés.</p>
+                <div class="social-links">
+                    <a href="#">Twitter</a>
+                    <a href="#">LinkedIn</a>
+                    <a href="#">Instagram</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('main-header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Floating elements animation
+        document.addEventListener('DOMContentLoaded', () => {
+            const floatingElements = document.querySelectorAll('.float-element');
+            floatingElements.forEach((element, index) => {
+                element.style.animationDelay = `${index * 0.5}s`;
+            });
+        });
+    </script>
     <script src="../script/script.js"></script>
 </body>
 </html>

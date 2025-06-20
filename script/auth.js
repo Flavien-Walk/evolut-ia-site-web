@@ -1,9 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const API_URL = "https://evolutia-back.onrender.com";
+
   const loginButton = document.getElementById("login-button");
   const profileButton = document.getElementById("profile-button");
   const logoutButton = document.getElementById("logout-button");
 
-  // Fonction pour mettre à jour l'affichage des boutons
+  // 🔁 Met à jour l'affichage des boutons selon le token
   const updateAuthButtons = () => {
     const token = localStorage.getItem("token");
     if (token) {
@@ -23,20 +25,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
   updateAuthButtons();
 
-  // Redirection sécurisée sur le bouton Profil
+  // 🔒 Redirection sécurisée depuis le bouton Profil
   if (profileButton) {
     profileButton.addEventListener("click", (e) => {
       e.preventDefault();
       const token = localStorage.getItem("token");
-      if (token) {
-        window.location.href = "profil.html";
-      } else {
-        window.location.href = "login.html";
-      }
+      window.location.href = token ? "profil.html" : "login.html";
     });
   }
 
-  // Gestion du formulaire de connexion
+  // 📥 Formulaire de connexion
   const loginForm = document.querySelector(".login-right form, .login-container form");
   if (loginForm) {
     loginForm.addEventListener("submit", async (e) => {
@@ -45,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const password = loginForm.querySelector('input[type="password"]').value;
 
       try {
-        const response = await fetch("http://10.109.249.241:3636/login", {
+        const response = await fetch(`${API_URL}/login`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ email, password }),
@@ -68,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Gestion du formulaire d'inscription
+  // 📝 Formulaire d'inscription
   const registerForm = document.querySelector(".register-right form, .register-container form");
   if (registerForm) {
     registerForm.addEventListener("submit", async (e) => {
@@ -85,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       try {
-        const response = await fetch("http://10.109.249.241:3636/register", {
+        const response = await fetch(`${API_URL}/register`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ email, username, password }),
@@ -108,11 +106,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Récupération des infos sur la page profil
+  // 👤 Chargement des infos sur la page profil
   if (window.location.pathname.endsWith("profil.html")) {
     const token = localStorage.getItem("token");
     if (token) {
-      fetch("http://10.109.249.241:3636/user-info", {
+      fetch(`${API_URL}/user-info`, {
         headers: { Authorization: `Bearer ${token}` }
       })
         .then((response) => response.json())
@@ -135,13 +133,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Gestion de la déconnexion
+  // 🚪 Déconnexion
   if (logoutButton) {
     logoutButton.addEventListener("click", async () => {
       const token = localStorage.getItem("token");
       if (token) {
         try {
-          await fetch("http://10.109.249.241:3636/logout", {
+          await fetch(`${API_URL}/logout`, {
             method: "POST",
             headers: { Authorization: `Bearer ${token}` }
           });
