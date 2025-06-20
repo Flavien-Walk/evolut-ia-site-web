@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Evolut'IA | Parlons de votre projet</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/contact.css">
+    <link rel="stylesheet" href="/evolut-IAlanding/css/scrollbar.css">
+    <script src="../script/auth.js" defer></script>
+</head>
+<body>
+    <!-- Header Section modernisé -->
+    <header id="main-header">
+        <div class="logo">
+            <img src="../images/logo.png" alt="Logo Evolut'IA">
+            
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/evolut-IAlanding/index.html">Accueil</a></li>
+                <li><a href="produit.html">Solutions</a></li>
+                <li><a href="prix.html">Tarifs</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="auth-buttons">
+            <button class="connect-btn" id="login-button" onclick="window.location.href='login.html'">
+                <span>Se connecter</span>
+            </button>
+            <button class="profile-btn" id="profile-button" style="display: none;" onclick="window.location.href='profil.html'">
+                <span>Mon Profil</span>
+            </button>
+            <button class="join-btn cta-glow">
+                <span>Essai gratuit</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section Contact -->
+    <section class="contact-hero">
+        <div class="hero-background">
+            <div class="floating-elements">
+                <div class="float-element">💬</div>
+                <div class="float-element">📧</div>
+                <div class="float-element">🤝</div>
+                <div class="float-element">💡</div>
+                <div class="float-element">🚀</div>
+            </div>
+        </div>
+        
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span>Une question ? Parlons-en !</span>
+            </div>
+            <h1>
+                Transformons ensemble votre 
+                <span class="gradient-text">vision</span> en réalité
+            </h1>
+            <p class="hero-subtitle">
+                Notre équipe est là pour vous accompagner dans votre parcours d'apprentissage. 
+                Que vous soyez étudiant, enseignant ou professionnel, trouvons la solution qui vous correspond !
+            </p>
+            
+            <div class="contact-methods">
+                <div class="contact-method">
+                    <div class="method-icon">⚡</div>
+                    <div class="method-info">
+                        <span class="method-title">Réponse rapide</span>
+                        <span class="method-desc">Sous 24h</span>
+                    </div>
+                </div>
+                <div class="contact-method">
+                    <div class="method-icon">🎯</div>
+                    <div class="method-info">
+                        <span class="method-title">Conseil personnalisé</span>
+                        <span class="method-desc">Sur-mesure</span>
+                    </div>
+                </div>
+                <div class="contact-method">
+                    <div class="method-icon">🤝</div>
+                    <div class="method-info">
+                        <span class="method-title">Accompagnement</span>
+                        <span class="method-desc">Complet</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Main Section -->
+    <section class="contact-section">
+        <div class="contact-container">
+            <!-- Formulaire principal -->
+            <div class="contact-left">
+                <div class="form-header">
+                    <h2>Envoyez-nous un message</h2>
+                    <p>Décrivez-nous votre projet et nous vous recontacterons rapidement avec une solution adaptée.</p>
+                </div>
+                
+                <form action="#" method="post" class="contact-form" id="contact-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Nom complet *</label>
+                            <input type="text" id="name" name="name" placeholder="Votre nom" required />
+                            <div class="form-icon">👤</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" placeholder="votre@email.com" required />
+                            <div class="form-icon">@</div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Téléphone</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+33 6 12 34 56 78" />
+                            <div class="form-icon">📞</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Type de demande</label>
+                            <select id="subject" name="subject">
+                                <option value="">Sélectionnez...</option>
+                                <option value="etudiant">Je suis étudiant</option>
+                                <option value="enseignant">Je suis enseignant</option>
+                                <option value="etablissement">Je représente un établissement</option>
+                                <option value="professionnel">Je suis un professionnel de santé</option>
+                                <option value="partenariat">Partenariat</option>
+                                <option value="support">Support technique</option>
+                                <option value="autre">Autre</option>
+                            </select>
+                            <div class="form-icon">▼</div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" rows="6" placeholder="Décrivez votre projet, vos besoins ou votre question..." required></textarea>
+                       
+                    </div>
+                    
+                    <div class="form-footer">
+                        <div class="privacy-notice">
+                            <input type="checkbox" id="privacy" required>
+                            <label for="privacy">J'accepte la <a href="#">politique de confidentialité</a></label>
+                        </div>
+                        <button type="submit" class="submit-btn">
+                            <span>Envoyer le message</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                <path d="M22 2L11 13M22 2L15 22L11 13M22 2L2 9L11 13" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Info Section séparée -->
+    <section class="contact-info">
+        <h3>Autres moyens de nous contacter</h3>
+        <p>Choisissez le canal qui vous convient le mieux</p>
+        
+        <div class="contact-cards">
+            <div class="contact-card">
+                <div class="card-icon">@</div>
+                <div class="card-content">
+                    <h4>Email</h4>
+                    <p>contact@evolutia.fr</p>
+                    <span class="response-time">Réponse sous 24h</span>
+                </div>
+            </div>
+            
+            <div class="contact-card">
+                <div class="card-icon">☎</div>
+                <div class="card-content">
+                    <h4>Téléphone</h4>
+                    <p>+33 1 23 45 67 89</p>
+                    <span class="response-time">Lun-Ven 9h-18h</span>
+                </div>
+            </div>
+            
+            <div class="contact-card">
+                <div class="card-icon">💬</div>
+                <div class="card-content">
+                    <h4>Chat en direct</h4>
+                    <p>Support instantané</p>
+                    <button class="chat-btn">Ouvrir le chat</button>
+                </div>
+            </div>
+            
+            <div class="contact-card">
+                <div class="card-icon">📅</div>
+                <div class="card-content">
+                    <h4>Rendez-vous</h4>
+                    <p>Consultation gratuite</p>
+                    <button class="appointment-btn">Prendre RDV</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ rapide -->
+    <section class="quick-faq">
+        <div class="faq-container">
+            <h2>Questions fréquentes</h2>
+            <p>Trouvez rapidement les réponses à vos questions</p>
+            
+            <div class="faq-grid">
+                <div class="faq-card">
+                    <h4>Comment fonctionne l'essai gratuit ?</h4>
+                    <p>Accédez à toutes les fonctionnalités pendant 7 jours, sans engagement ni carte bancaire.</p>
+                </div>
+                <div class="faq-card">
+                    <h4>Quel support est disponible ?</h4>
+                    <p>Support par email, chat et téléphone selon votre formule. Réponse garantie sous 24h.</p>
+                </div>
+                <div class="faq-card">
+                    <h4>Peut-on changer de formule ?</h4>
+                    <p>Oui, vous pouvez upgrader, downgrader ou annuler à tout moment depuis votre profil.</p>
+                </div>
+                <div class="faq-card">
+                    <h4>Y a-t-il des formations ?</h4>
+                    <p>Oui, nous proposons des formations personnalisées pour les établissements et professionnels.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Media Section modernisée -->
+    <section class="social-section">
+        <div class="social-container">
+            <div class="social-header">
+                <h2>Rejoignez notre communauté</h2>
+                <p>Suivez nos actualités et découvrez les success stories de notre communauté</p>
+            </div>
+            
+            <div class="social-cards">
+                <a href="#" class="social-card instagram" target="_blank">
+                    <div class="social-icon">
+                        <img src="../images/instagram.png" alt="Instagram">
+                    </div>
+                    <div class="social-content">
+                        <h3>Instagram</h3>
+                        <p>Découvrez nos tips et astuces d'apprentissage</p>
+                        <span class="followers">12K abonnés</span>
+                    </div>
+                    <div class="social-arrow">→</div>
+                </a>
+                
+                <a href="#" class="social-card linkedin" target="_blank">
+                    <div class="social-icon">
+                        <img src="../images/link.png" alt="LinkedIn">
+                    </div>
+                    <div class="social-content">
+                        <h3>LinkedIn</h3>
+                        <p>Actualités et insights sur l'éducation</p>
+                        <span class="followers">8K connexions</span>
+                    </div>
+                    <div class="social-arrow">→</div>
+                </a>
+                
+                <a href="#" class="social-card tiktok" target="_blank">
+                    <div class="social-icon">
+                        <img src="../images/TIK.png" alt="TikTok">
+                    </div>
+                    <div class="social-content">
+                        <h3>TikTok</h3>
+                        <p>Apprentissage fun et viral</p>
+                        <span class="followers">25K abonnés</span>
+                    </div>
+                    <div class="social-arrow">→</div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="final-cta">
+        <div class="cta-content">
+            <h2>Prêt à commencer votre transformation ?</h2>
+            <p>Rejoignez des milliers d'étudiants qui ont déjà choisi l'excellence</p>
+            
+            <div class="cta-buttons">
+                <button class="cta-btn primary">
+                    <span>Commencer gratuitement</span>
+                </button>
+                <button class="cta-btn secondary">
+                    <span>Planifier une démo</span>
+                </button>
+            </div>
+            
+            <div class="cta-guarantees">
+                <span>7 jours gratuits • Sans engagement • Activation immédiate</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer modernisé -->
+    <footer class="footer-modern">
+        <div class="footer-content">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <div class="brand-logo">
+                        <span class="brand-name">Evolut'IA</span>
+                    </div>
+                    <p class="brand-description">
+                        L'intelligence artificielle au service de ton succès scolaire.
+                    </p>
+                    <div class="newsletter-signup">
+                        <h4>Reste informé des nouveautés</h4>
+                        <div class="newsletter-form">
+                            <input type="email" placeholder="ton.email@exemple.com">
+                            <button class="newsletter-btn">S'abonner</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Solutions</h4>
+                        <a href="produit.html">Tous nos packs</a>
+                        <a href="prix.html">Tarifs</a>
+                        <a href="#">Essai gratuit</a>
+                        <a href="#">Étudiants</a>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>Entreprise</h4>
+                        <a href="#">À propos</a>
+                        <a href="contact.html">Contact</a>
+                        <a href="#">Carrières</a>
+                        <a href="#">Presse</a>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>Support</h4>
+                        <a href="#">Centre d'aide</a>
+                        <a href="#">Tutoriels</a>
+                        <a href="#">FAQ</a>
+                        <a href="#">Status</a>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>Légal</h4>
+                        <a href="#">Confidentialité</a>
+                        <a href="#">CGU</a>
+                        <a href="#">Cookies</a>
+                        <a href="#">RGPD</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Evolut'IA. Tous droits réservés.</p>
+                <div class="social-links">
+                    <a href="#">Twitter</a>
+                    <a href="#">LinkedIn</a>
+                    <a href="#">Instagram</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('main-header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Form validation and submission
+        const contactForm = document.getElementById('contact-form');
+        
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const submitBtn = contactForm.querySelector('.submit-btn');
+            const originalText = submitBtn.querySelector('span').textContent;
+            
+            // Loading state
+            submitBtn.classList.add('loading');
+            submitBtn.querySelector('span').textContent = 'Envoi en cours...';
+            submitBtn.disabled = true;
+            
+            // Simulate form submission
+            setTimeout(() => {
+                // Success state
+                submitBtn.classList.remove('loading');
+                submitBtn.classList.add('success');
+                submitBtn.querySelector('span').textContent = 'Message envoyé !';
+                
+                // Show success message
+                const successMessage = document.createElement('div');
+                successMessage.className = 'success-message';
+                successMessage.innerHTML = `
+                    <div class="success-content">
+                        <span class="success-icon">✅</span>
+                        <span>Merci ! Nous vous recontacterons sous 24h.</span>
+                    </div>
+                `;
+                contactForm.appendChild(successMessage);
+                
+                // Reset form after 3 seconds
+                setTimeout(() => {
+                    contactForm.reset();
+                    submitBtn.classList.remove('success');
+                    submitBtn.querySelector('span').textContent = originalText;
+                    submitBtn.disabled = false;
+                    successMessage.remove();
+                }, 3000);
+            }, 2000);
+        });
+
+        // Form field animations
+        const formInputs = document.querySelectorAll('.form-group input, .form-group select, .form-group textarea');
+        
+        formInputs.forEach(input => {
+            input.addEventListener('focus', () => {
+                input.parentElement.classList.add('focused');
+            });
+            
+            input.addEventListener('blur', () => {
+                if (!input.value) {
+                    input.parentElement.classList.remove('focused');
+                }
+            });
+            
+            // Check if input has value on load
+            if (input.value) {
+                input.parentElement.classList.add('focused');
+            }
+        });
+
+        // Chat button functionality
+        document.querySelector('.chat-btn')?.addEventListener('click', () => {
+            alert('Chat en direct - Fonctionnalité bientôt disponible !');
+        });
+
+        // Appointment button functionality
+        document.querySelector('.appointment-btn')?.addEventListener('click', () => {
+            alert('Prise de rendez-vous - Redirection vers Calendly...');
+        });
+
+        // Floating elements animation
+        document.addEventListener('DOMContentLoaded', () => {
+            const floatingElements = document.querySelectorAll('.float-element');
+            floatingElements.forEach((element, index) => {
+                element.style.animationDelay = `${index * 0.5}s`;
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'slideInUp 0.6s ease-out';
+                }
+            });
+        }, observerOptions);
+
+        // Observe sections for animations
+        document.querySelectorAll('.contact-section, .quick-faq, .social-section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>

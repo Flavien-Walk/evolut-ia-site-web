@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Connexion - Evolut'IA | Accédez à votre espace</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../css/login.css"/>
+  <link rel="stylesheet" href="/evolut-IAlanding/css/scrollbar.css">
+</head>
+<body>
+  <div class="auth-container">
+    <!-- Section gauche -->
+    <div class="auth-left">
+      <div class="brand-section">
+        <div class="brand-header">
+          <img src="../images/Logo_noir_Evolut_IA.png" alt="Logo Evolut'IA" class="logo"/>
+          <div class="brand-text">
+            <h1>Bon retour !</h1>
+            <p>Reconnectez-vous à votre parcours d'apprentissage personnalisé</p>
+          </div>
+        </div>
+
+        <div class="auth-benefits">
+          <div class="benefit-item"><div class="benefit-icon">📊</div><div class="benefit-text"><h4>Suivi de progression</h4><p>Retrouvez vos statistiques et vos progrès</p></div></div>
+          <div class="benefit-item"><div class="benefit-icon">⚡</div><div class="benefit-text"><h4>Contenu personnalisé</h4><p>Exercices adaptés à votre niveau</p></div></div>
+          <div class="benefit-item"><div class="benefit-icon">⭐</div><div class="benefit-text"><h4>Objectifs atteints</h4><p>Continuez vers l'excellence</p></div></div>
+        </div>
+
+        <div class="auth-visual">
+          <img src="../images/student-illustration.png" alt="Illustration étudiant"/>
+          <div class="visual-overlay">
+            <div class="success-stats">
+              <div class="stat-item"><span class="stat-number">97%</span><span class="stat-label">réussite</span></div>
+              <div class="stat-item"><span class="stat-number">10k+</span><span class="stat-label">étudiants</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section droite -->
+    <div class="auth-right">
+      <div class="auth-form-container">
+        <div class="form-header">
+          <h2>Connexion</h2>
+          <p>Pas encore de compte ? <a href="register.html" class="switch-link">Inscrivez-vous gratuitement</a></p>
+        </div>
+
+        <form id="login-form" class="auth-form">
+          <div class="form-group">
+            <label for="email">Adresse email</label>
+            <div class="input-container">
+              <input type="email" id="email" name="email" placeholder="votre@email.com" required/>
+              <div class="input-icon">@</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="password">Mot de passe</label>
+            <div class="input-container">
+              <input type="password" id="password" name="password" placeholder="••••••••" required/>
+              <button type="button" class="toggle-password" aria-label="Afficher le mot de passe">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                  <path d="M1 12S5 4 12 4s11 8 11 8-4 8-11 8S1 12 1 12z" stroke="currentColor" stroke-width="2"/>
+                  <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="form-options">
+            <label class="remember-me">
+              <input type="checkbox" id="remember"/>
+              <span class="checkmark"></span>
+              Se souvenir de moi
+            </label>
+            <a href="#" class="forgot-password">Mot de passe oublié ?</a>
+          </div>
+
+          <button type="submit" class="auth-btn primary">
+            <span>Se connecter</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2"/>
+            </svg>
+          </button>
+        </form>
+
+        <div class="divider"><span>ou continuer avec</span></div>
+
+        <div class="social-auth">
+          <button class="social-btn google"><img src="../images/google.png" alt="Google"/><span>Google</span></button>
+          <button class="social-btn facebook"><img src="../images/facebook.png" alt="Facebook"/><span>Facebook</span></button>
+          <button class="social-btn apple"><img src="../images/apple.png" alt="Apple"/><span>Apple</span></button>
+        </div>
+
+        <div class="back-home">
+          <a href="/evolut-IAlanding/index.html" class="back-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+              <path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="currentColor" stroke-width="2"/>
+            </svg>
+            Retour à l'accueil
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // 👁 Afficher / masquer le mot de passe
+    document.querySelector('.toggle-password').addEventListener('click', function () {
+      const passwordInput = document.getElementById('password');
+      const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+      passwordInput.setAttribute('type', type);
+
+      const icon = this.querySelector('svg');
+      icon.innerHTML = type === 'text'
+        ? `<path d="M1 12S5 4 12 4s11 8 11 8-4 8-11 8S1 12 1 12z" stroke="currentColor" stroke-width="2"/><path d="M21 4L3 20" stroke="currentColor" stroke-width="2"/>`
+        : `<path d="M1 12S5 4 12 4s11 8 11 8-4 8-11 8S1 12 1 12z" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>`;
+    });
+
+    // 🔐 Soumission du formulaire
+    document.getElementById('login-form').addEventListener('submit', async function (e) {
+      e.preventDefault();
+
+      const submitBtn = this.querySelector('.auth-btn');
+      const originalText = submitBtn.querySelector('span').textContent;
+      submitBtn.classList.add('loading');
+      submitBtn.querySelector('span').textContent = 'Connexion...';
+      submitBtn.disabled = true;
+
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+
+      try {
+        const response = await fetch("https://evolutia-back.onrender.com/login", {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, password })
+        });
+
+        if (response.ok) {
+          const data = await response.json();
+          submitBtn.classList.remove('loading');
+          submitBtn.classList.add('success');
+          submitBtn.querySelector('span').textContent = 'Connexion réussie !';
+          localStorage.setItem('token', data.token);
+          setTimeout(() => { window.location.href = '/evolut-IAlanding/index.html'; }, 1000);
+        } else {
+          throw new Error('Identifiants incorrects');
+        }
+      } catch (error) {
+        submitBtn.classList.remove('loading');
+        submitBtn.classList.add('error');
+        submitBtn.querySelector('span').textContent = 'Erreur de connexion';
+        const errorMessage = document.createElement('div');
+        errorMessage.className = 'error-message';
+        errorMessage.innerHTML = `<div class="error-content"><span class="error-icon">⚠️</span><span>${error.message}</span></div>`;
+        this.appendChild(errorMessage);
+        setTimeout(() => {
+          submitBtn.classList.remove('error');
+          submitBtn.querySelector('span').textContent = originalText;
+          submitBtn.disabled = false;
+          errorMessage.remove();
+        }, 3000);
+      }
+    });
+
+    // Focus visuel sur les champs
+    document.querySelectorAll('.input-container input').forEach(input => {
+      input.addEventListener('focus', () => input.parentElement.classList.add('focused'));
+      input.addEventListener('blur', () => { if (!input.value) input.parentElement.classList.remove('focused'); });
+      if (input.value) input.parentElement.classList.add('focused');
+    });
+
+    // Boutons sociaux
+    document.querySelectorAll('.social-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const provider = btn.className.split(' ')[1];
+        alert(`Connexion avec ${provider} - Fonctionnalité bientôt disponible !`);
+      });
+    });
+
+    // Mot de passe oublié
+    document.querySelector('.forgot-password').addEventListener('click', (e) => {
+      e.preventDefault();
+      alert('Fonctionnalité de récupération de mot de passe bientôt disponible !');
+    });
+  </script>
+</body>
+</html>

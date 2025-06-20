@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Achat - Semaine Révision Bac</title>
+  <link rel="stylesheet" href="../css/achat.css" />
+  <link rel="stylesheet" href="/evolut-IAlanding/css/scrollbar.css">
+  <script src="../script/auth.js" defer></script>
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <img src="../images/logo.png" alt="Logo Évolut'IA">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="/evolut-IAlanding/index.html">Accueil</a></li>
+        <li><a href="produit.html">Produits</a></li>
+        <li><a href="prix.html">Prix</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="auth-buttons">
+      <button class="connect-btn" id="login-button" onclick="window.location.href='login.html'">Se connecter</button>
+      <button class="profile-btn" id="profile-button" style="display: none;" onclick="window.location.href='profil.html'">Profil</button>
+      <button class="join-btn">Rejoignez-nous →</button>
+    </div>
+  </header>
+
+  <!-- Bandeau titre -->
+  <section class="header">
+    <h1>Mon Panier</h1>
+    <p>Les articles seront réservés pendant 60 minutes</p>
+  </section>
+
+  <!-- Contenu principal -->
+  <main class="container">
+    <section class="cart-left">
+      <div class="cart-item">
+        <img src="../images/pack9.png" alt="Révision Bac">
+        <div class="item-info">
+          <h2 id="product-title">Semaine Spéciale Révision Bac</h2>
+          <p class="price">6,99 €</p>
+          <p class="desc">Accès intensif à toutes les matières clés + planning personnalisé</p>
+          <div class="quantity">
+            <label for="qty">Qté :</label>
+            <select id="qty">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+            </select>
+          </div>
+        </div>
+        <button class="remove-btn">✖</button>
+      </div>
+    </section>
+
+    <section class="cart-right">
+      <div class="summary">
+        <h2>Total</h2>
+        <div class="line">
+          <span>Sous-total</span>
+          <span>6,99 €</span>
+        </div>
+        <div class="line">
+          <span>Livraison</span>
+          <span>Standard (gratuite)</span>
+        </div>
+        <button class="pay-btn" id="pay-btn">PAIEMENT</button>
+        <p class="accept">Nous acceptons :</p>
+        <div class="payments">
+          <img src="../images/visa.png" alt="Visa" />
+          <img src="../images/mastercard.png" alt="Mastercard" />
+          <img src="../images/paypal.png" alt="Paypal" />
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const payBtn = document.getElementById("pay-btn");
+      payBtn.addEventListener("click", async () => {
+        const token = localStorage.getItem("token");
+        if (!token) {
+          alert("Vous devez être connecté pour effectuer un achat.");
+          window.location.href = "login.html";
+          return;
+        }
+
+        // Récupérer le titre du produit
+        const planTitle = document.getElementById("product-title").textContent.trim();
+
+        try {
+          const response = await fetch("https://evolutia-back.onrender.com/choose-plan", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "Authorization": `Bearer ${token}`
+            },
+            body: JSON.stringify({ plan: planTitle })
+          });
+
+          if (!response.ok) {
+            throw new Error("Votre session a expiré ou est invalide. Veuillez vous reconnecter.");
+          }
+
+          const data = await response.json();
+          alert(`Merci ! Vous avez ajouté au compte : ${planTitle}.`);
+
+          console.log(`✅ Utilisateur connecté a choisi le pack : ${planTitle}`);
+
+          // Optionnel : rediriger vers une autre page ou actualiser
+          // window.location.href = "profil.html";
+        } catch (error) {
+          console.error("Erreur lors de la sélection du plan :", error);
+          alert(error.message || "Une erreur est survenue.");
+          localStorage.removeItem("token");
+          window.location.href = "login.html";
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
