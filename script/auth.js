@@ -1,17 +1,18 @@
 document.addEventListener("DOMContentLoaded", () => {
   const API_URL = "https://evolutia-back.onrender.com";
-
   const loginButton = document.getElementById("login-button");
   const profileButton = document.getElementById("profile-button");
   const logoutButton = document.getElementById("logout-button");
 
-  // 🔧 Corrigé : on fixe toujours le bon dossier de pages
+  // Chemin de base pour les redirections
   const getBasePath = () => "/html/";
 
+  // Redirige vers la page cible (en ajoutant le préfixe du dossier)
   const redirectTo = (page) => {
     window.location.href = getBasePath() + page;
   };
 
+  // Met à jour l'affichage des boutons selon l'état de connexion
   const updateAuthButtons = () => {
     const token = localStorage.getItem("token");
     if (token) {
@@ -29,6 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
+  // Action quand on clique sur "Mon profil"
   if (profileButton) {
     profileButton.addEventListener("click", (e) => {
       e.preventDefault();
@@ -37,6 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // Action quand on clique sur "Se connecter"
   if (loginButton) {
     loginButton.addEventListener("click", (e) => {
       e.preventDefault();
@@ -45,6 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // Action quand on clique sur "Se déconnecter"
   if (logoutButton) {
     logoutButton.addEventListener("click", async () => {
       const token = localStorage.getItem("token");
@@ -61,10 +65,11 @@ document.addEventListener("DOMContentLoaded", () => {
       localStorage.removeItem("token");
       alert("Vous avez été déconnecté.");
       updateAuthButtons();
-      window.location.href = "/index.html"; // Redirection à la racine après logout
+      window.location.href = "/index.html";
     });
   }
 
+  // Charge les infos du profil si on est sur profil.html
   const loadUserProfile = async () => {
     const token = localStorage.getItem("token");
     if (!token) {
@@ -80,10 +85,13 @@ document.addEventListener("DOMContentLoaded", () => {
       const data = await response.json();
 
       if (response.ok && data.username && data.email) {
-        document.getElementById("username").textContent = data.username;
-        document.getElementById("email").textContent = data.email;
-        const offerElement = document.getElementById("selected-offer");
-        if (offerElement) offerElement.textContent = data.selectedPlan || "Aucune";
+        const usernameEl = document.getElementById("username");
+        const emailEl = document.getElementById("email");
+        const offerEl = document.getElementById("selected-offer");
+
+        if (usernameEl) usernameEl.textContent = data.username;
+        if (emailEl) emailEl.textContent = data.email;
+        if (offerEl) offerEl.textContent = data.selectedPlan || "Aucune";
       } else {
         localStorage.removeItem("token");
         updateAuthButtons();
@@ -97,9 +105,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
+  // Si on est sur la page profil, on charge les infos
   if (window.location.pathname.includes("profil.html")) {
     loadUserProfile();
   }
 
+  // Met à jour l'affichage des boutons
   updateAuthButtons();
 });
