@@ -5,10 +5,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const profileButton = document.getElementById("profile-button");
   const logoutButton = document.getElementById("logout-button");
 
-  const getBasePath = () => {
-    const path = window.location.pathname;
-    return path.includes("/html/") ? "../" : "./html/";
-  };
+  // 🔧 Corrigé : on fixe toujours le bon dossier de pages
+  const getBasePath = () => "/html/";
 
   const redirectTo = (page) => {
     window.location.href = getBasePath() + page;
@@ -63,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
       localStorage.removeItem("token");
       alert("Vous avez été déconnecté.");
       updateAuthButtons();
-      window.location.href = "/index.html"; // pour Vercel
+      window.location.href = "/index.html"; // Redirection à la racine après logout
     });
   }
 
