@@ -5,12 +5,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const profileButton = document.getElementById("profile-button");
   const logoutButton = document.getElementById("logout-button");
 
-  // 🔁 Détection du contexte (racine ou sous-dossier)
-  const isRoot = window.location.pathname === "/" || window.location.pathname.endsWith("index.html");
-  const pathPrefix = isRoot ? "evolut-IAlanding/html/" : "";
+  // 🔁 Détection du bon chemin relatif pour les redirections
+  const basePath = window.location.pathname.includes("/html/") ? "./" : "./html/";
 
-  const redirectToRoot = () => {
-    window.location.href = window.location.origin + "/index.html";
+  const redirectToHome = () => {
+    window.location.href = "../index.html";
+
   };
 
   const updateAuthButtons = () => {
@@ -32,14 +32,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   updateAuthButtons();
 
-  // 🔐 Redirection depuis le bouton "Profil"
+  // 🔐 Redirection sécurisée depuis le bouton Profil
   if (profileButton) {
     profileButton.addEventListener("click", (e) => {
       e.preventDefault();
       const token = localStorage.getItem("token");
       window.location.href = token
-        ? `${pathPrefix}profil.html`
-        : `${pathPrefix}login.html`;
+        ? `${basePath}profil.html`
+        : `${basePath}login.html`;
     });
   }
 
@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
           alert("Connexion réussie !");
           localStorage.setItem("token", data.token);
           updateAuthButtons();
-          redirectToRoot();
+          redirectToHome();
         } else {
           alert(data.error || "Erreur de connexion.");
         }
@@ -104,7 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
           alert("Inscription réussie !");
           localStorage.setItem("token", data.token);
           updateAuthButtons();
-          redirectToRoot();
+          redirectToHome();
         } else {
           alert(data.error || "Erreur lors de l'inscription.");
         }
@@ -135,14 +135,14 @@ document.addEventListener("DOMContentLoaded", () => {
           } else {
             localStorage.removeItem("token");
             updateAuthButtons();
-            window.location.href = `${pathPrefix}login.html`;
+            window.location.href = `${basePath}login.html`;
           }
         })
         .catch((error) => {
           console.error("Erreur lors de la récupération du profil :", error);
           localStorage.removeItem("token");
           updateAuthButtons();
-          window.location.href = `${pathPrefix}login.html`;
+          window.location.href = `${basePath}login.html`;
         });
     }
   }
@@ -164,7 +164,7 @@ document.addEventListener("DOMContentLoaded", () => {
       localStorage.removeItem("token");
       alert("Vous avez été déconnecté.");
       updateAuthButtons();
-      redirectToRoot(); // 🔁 Redirection propre vers /index.html
+      redirectToHome(); // Redirection vers ./index.html
     });
   }
 });
