@@ -5,7 +5,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const profileButton = document.getElementById("profile-button");
   const logoutButton = document.getElementById("logout-button");
 
-  // 🔁 Met à jour l'affichage des boutons selon le token
+  // 🔁 Détection du contexte (racine ou sous-dossier)
+  const isRoot = window.location.pathname === "/" || window.location.pathname.endsWith("index.html");
+  const pathPrefix = isRoot ? "evolut-IAlanding/html/" : "";
+
+  const redirectToRoot = () => {
+    window.location.href = window.location.origin + "/index.html";
+  };
+
   const updateAuthButtons = () => {
     const token = localStorage.getItem("token");
     if (token) {
@@ -25,16 +32,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
   updateAuthButtons();
 
-  // 🔒 Redirection sécurisée depuis le bouton Profil
+  // 🔐 Redirection depuis le bouton "Profil"
   if (profileButton) {
     profileButton.addEventListener("click", (e) => {
       e.preventDefault();
       const token = localStorage.getItem("token");
-      window.location.href = token ? "profil.html" : "login.html";
+      window.location.href = token
+        ? `${pathPrefix}profil.html`
+        : `${pathPrefix}login.html`;
     });
   }
 
-  // 📥 Formulaire de connexion
+  // 📥 Connexion
   const loginForm = document.querySelector(".login-right form, .login-container form");
   if (loginForm) {
     loginForm.addEventListener("submit", async (e) => {
@@ -55,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
           alert("Connexion réussie !");
           localStorage.setItem("token", data.token);
           updateAuthButtons();
-          window.location.href = "index.html";
+          redirectToRoot();
         } else {
           alert(data.error || "Erreur de connexion.");
         }
@@ -66,7 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 📝 Formulaire d'inscription
+  // 📝 Inscription
   const registerForm = document.querySelector(".register-right form, .register-container form");
   if (registerForm) {
     registerForm.addEventListener("submit", async (e) => {
@@ -95,7 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
           alert("Inscription réussie !");
           localStorage.setItem("token", data.token);
           updateAuthButtons();
-          window.location.href = "index.html";
+          redirectToRoot();
         } else {
           alert(data.error || "Erreur lors de l'inscription.");
         }
@@ -106,29 +115,34 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 👤 Chargement des infos sur la page profil
-  if (window.location.pathname.endsWith("profil.html")) {
+  // 👤 Affichage des infos sur la page profil
+  if (window.location.pathname.includes("profil.html")) {
     const token = localStorage.getItem("token");
     if (token) {
       fetch(`${API_URL}/user-info`, {
-        headers: { Authorization: `Bearer ${token}` }
+        headers: { Authorization: `Bearer ${token}` },
       })
         .then((response) => response.json())
         .then((data) => {
           if (data.username && data.email) {
             document.getElementById("username").textContent = data.username;
             document.getElementById("email").textContent = data.email;
+
+            const offerElement = document.getElementById("selected-offer");
+            if (offerElement) {
+              offerElement.textContent = data.selectedPlan || "Aucune";
+            }
           } else {
             localStorage.removeItem("token");
             updateAuthButtons();
-            window.location.href = "login.html";
+            window.location.href = `${pathPrefix}login.html`;
           }
         })
         .catch((error) => {
           console.error("Erreur lors de la récupération du profil :", error);
           localStorage.removeItem("token");
           updateAuthButtons();
-          window.location.href = "login.html";
+          window.location.href = `${pathPrefix}login.html`;
         });
     }
   }
@@ -141,7 +155,7 @@ document.addEventListener("DOMContentLoaded", () => {
         try {
           await fetch(`${API_URL}/logout`, {
             method: "POST",
-            headers: { Authorization: `Bearer ${token}` }
+            headers: { Authorization: `Bearer ${token}` },
           });
         } catch (error) {
           console.error("Erreur lors de la déconnexion :", error);
@@ -150,7 +164,7 @@ document.addEventListener("DOMContentLoaded", () => {
       localStorage.removeItem("token");
       alert("Vous avez été déconnecté.");
       updateAuthButtons();
-      window.location.href = "index.html";
+      redirectToRoot(); // 🔁 Redirection propre vers /index.html
     });
   }
 });

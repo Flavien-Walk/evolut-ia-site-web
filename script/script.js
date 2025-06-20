@@ -4,7 +4,7 @@ const learnMoreButton = document.querySelector('.secondary-btn');
 
 // Ajouter les événements de clic
 joinButton.addEventListener('click', () => {
-    window.location.href = "http://127.0.0.1:5500/evolut-IAlanding/html/register.html"; // Remplacez ce lien par celui de votre page d'inscription
+    window.location.href = "/"; // Remplacez ce lien par celui de votre page d'inscription
 });
 
 learnMoreButton.addEventListener('click', () => {
