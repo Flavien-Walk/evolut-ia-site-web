@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Achat - Semaine Révision Bac</title>
   <link rel="stylesheet" href="../css/achat.css" />
-  <link rel="stylesheet" href="../css/scrollbar.css">
+  <link rel="stylesheet" href="../css/scrollbar.css" />
   <script src="../script/auth.js" defer></script>
 </head>
 
@@ -18,15 +18,14 @@
     <nav>
       <ul>
         <li><a href="/index.html">Accueil</a></li>
-<li><a href="/html/produit.html">Produits</a></li>
-<li><a href="/html/prix.html">Prix</a></li>
-<li><a href="/html/contact.html">Contact</a></li>
-
+        <li><a href="/html/produit.html">Produits</a></li>
+        <li><a href="/html/prix.html">Prix</a></li>
+        <li><a href="/html/contact.html">Contact</a></li>
       </ul>
     </nav>
     <div class="auth-buttons">
-      <button class="connect-btn" id="login-button" onclick="window.location.href='login.html'">Se connecter</button>
-      <button class="profile-btn" id="profile-button" style="display: none;" onclick="window.location.href='profil.html'">Profil</button>
+      <button class="connect-btn" id="login-button">Se connecter</button>
+      <button class="profile-btn" id="profile-button" style="display: none;">Profil</button>
       <button class="join-btn">Rejoignez-nous →</button>
     </div>
   </header>
@@ -88,11 +87,10 @@
         const token = localStorage.getItem("token");
         if (!token) {
           alert("Vous devez être connecté pour effectuer un achat.");
-          window.location.href = "login.html";
+          window.location.href = "/html/login.html";
           return;
         }
 
-        // Récupérer le titre du produit
         const planTitle = document.getElementById("product-title").textContent.trim();
 
         try {
@@ -111,20 +109,15 @@
 
           const data = await response.json();
           alert(`Merci ! Vous avez ajouté au compte : ${planTitle}.`);
-
           console.log(`✅ Utilisateur connecté a choisi le pack : ${planTitle}`);
-
-          // Optionnel : rediriger vers une autre page ou actualiser
-          // window.location.href = "profil.html";
         } catch (error) {
           console.error("Erreur lors de la sélection du plan :", error);
           alert(error.message || "Une erreur est survenue.");
           localStorage.removeItem("token");
-          window.location.href = "login.html";
+          window.location.href = "/html/login.html";
         }
       });
     });
   </script>
-
 </body>
 </html>

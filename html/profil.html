@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Mon Profil - Évolut'IA</title>
   <link rel="stylesheet" href="../css/profil.css" />
-  <link rel="stylesheet" href="../css/scrollbar.css">
+  <link rel="stylesheet" href="../css/scrollbar.css" />
   <script src="../script/auth.js" defer></script>
   <script>
     document.addEventListener("DOMContentLoaded", async () => {
       const token = localStorage.getItem("token");
       if (!token) {
-        window.location.href = "login.html";
+        window.location.href = "/html/login.html";
         return;
       }
 
@@ -30,45 +30,56 @@
           document.getElementById("username").textContent = data.username;
           document.getElementById("email").textContent = data.email;
 
-          // Affichage du plan choisi
           const offerElement = document.getElementById("selected-offer");
-          if (data.selectedPlan && data.selectedPlan !== "") {
-            offerElement.textContent = data.selectedPlan;
-          } else {
-            offerElement.textContent = "Aucune";
-          }
+          offerElement.textContent = data.selectedPlan && data.selectedPlan !== "" ? data.selectedPlan : "Aucune";
 
         } else {
           localStorage.removeItem("token");
-          window.location.href = "login.html";
+          window.location.href = "/html/login.html";
         }
       } catch (error) {
         console.error("Erreur lors de la récupération du profil :", error);
         localStorage.removeItem("token");
-        window.location.href = "login.html";
+        window.location.href = "/html/login.html";
+      }
+    });
+
+    // Gestion de la déconnexion
+    document.addEventListener("DOMContentLoaded", () => {
+      const logoutBtn = document.getElementById("logout-button");
+      if (logoutBtn) {
+        logoutBtn.addEventListener("click", () => {
+          localStorage.removeItem("token");
+          window.location.href = "/html/login.html";
+        });
       }
     });
   </script>
 </head>
 <body>
 
-  <!-- Header Section -->
-  <header>
+  <!-- Header -->
+  <header id="main-header">
     <div class="logo">
-      <img src="../images/logo.png" alt="Logo Évolut'IA">
+      <a href="/index.html">
+        <img src="../images/logo.png" alt="Logo Évolut'IA" />
+      </a>
     </div>
     <nav>
       <ul>
         <li><a href="/index.html">Accueil</a></li>
-<li><a href="/html/produit.html">Produits</a></li>
-<li><a href="/html/prix.html">Prix</a></li>
-<li><a href="/html/contact.html">Contact</a></li>
-
+        <li><a href="/html/produit.html">Produits</a></li>
+        <li><a href="/html/prix.html">Prix</a></li>
+        <li><a href="/html/contact.html">Contact</a></li>
       </ul>
     </nav>
     <div class="auth-buttons">
-      <button class="profile-btn" id="profile-button" onclick="window.location.href='profil.html'">Profil</button>
-      <button class="join-btn">Rejoignez-nous →</button>
+      <button class="profile-btn" id="profile-button" style="display: none;" onclick="window.location.href='/html/profil.html'">
+        <span>Mon Profil</span>
+      </button>
+      <button class="join-btn cta-glow">
+        <span>Rejoignez-nous →</span>
+      </button>
     </div>
   </header>
 
