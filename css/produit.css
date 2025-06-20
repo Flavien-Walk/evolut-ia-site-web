@@ -281,3 +281,202 @@ html {
     scrollbar-width: thin;
     scrollbar-color: #6D57FC #F0EFFF;
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /* BLOC FOOTER ENCADRÉ ÉTENDU */
+.footer-box {
+  background: #ffffff;
+  padding: 80px 0 60px;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-content {
+  background-color: #6D57FC;
+  color: white;
+  border-radius: 40px;
+  width: 96%;
+  max-width: 1600px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 60px 80px 40px;
+  position: relative;
+  box-shadow: 0 10px 40px rgba(109, 87, 252, 0.25);
+}
+
+/* GAUCHE : INSCRIPTION */
+.footer-left {
+  flex: 1;
+  min-width: 260px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.signup-btn {
+  background-color: #ffffff;
+  color: #6D57FC;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+  width: fit-content;
+}
+
+.signup-btn:hover {
+  background-color: #f1edff;
+  color: #4D47C3;
+}
+
+.newsletter-box {
+  background-color: white;
+  border-radius: 20px;
+  padding: 20px;
+  color: #0C0A1C;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.newsletter-box input {
+  padding: 10px 15px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+}
+
+.newsletter-btn {
+  margin-top: 5px;
+  background-color: #6D57FC;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  align-self: flex-end;
+  transition: background 0.3s ease;
+}
+
+.newsletter-btn:hover {
+  background-color: #4D47C3;
+}
+
+/* COLONNES DE LIENS AU CENTRE */
+.footer-links-columns {
+  flex: 2;
+  min-width: 300px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 60px;
+  margin-top: 20px;
+  margin-left: 60px; /* 🟣 ajoute cette marge pour l’éloigner de la newsletter */
+}
+
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 160px;
+}
+
+.footer-column h4 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.footer-column a {
+  text-decoration: none;
+  color: #e5e0ff;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.footer-column a:hover {
+  color: #ffffff;
+}
+
+/* LETTRES EVOLUTIA EN BAS DU FOOTER */
+.footer-brand {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  font-size: 6rem;
+  font-weight: 900;
+  letter-spacing: 5px;
+  padding: 60px 0 20px;
+  margin-top: 60px;
+  border-top: 2px solid #A7A3FF;
+}
+
+.footer-brand .letter {
+  display: inline-block;
+  color: #ffffff;
+  animation: bounceUp 2s infinite ease-in-out;
+}
+
+.footer-brand .letter:nth-child(1) { animation-delay: 0s; }
+.footer-brand .letter:nth-child(2) { animation-delay: 0.15s; }
+.footer-brand .letter:nth-child(3) { animation-delay: 0.3s; }
+.footer-brand .letter:nth-child(4) { animation-delay: 0.45s; }
+.footer-brand .letter:nth-child(5) { animation-delay: 0.6s; }
+.footer-brand .letter:nth-child(6) { animation-delay: 0.75s; }
+.footer-brand .letter:nth-child(7) { animation-delay: 0.9s; }
+.footer-brand .letter:nth-child(8) { animation-delay: 1.05s; }
+.footer-brand .letter:nth-child(9) { animation-delay: 1.2s; }
+
+@keyframes bounceUp {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-35px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .footer-links-columns {
+    justify-content: center;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .footer-brand {
+    font-size: 3.5rem;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+}
