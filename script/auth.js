@@ -7,12 +7,12 @@ document.addEventListener("DOMContentLoaded", () => {
   // Chemin de base pour les redirections
   const getBasePath = () => "/html/";
 
-  // Redirige vers la page cible (en ajoutant le préfixe du dossier)
+  // Redirige vers une page en ajoutant le chemin de base
   const redirectTo = (page) => {
     window.location.href = getBasePath() + page;
   };
 
-  // Met à jour l'affichage des boutons selon l'état de connexion
+  // Met à jour l'affichage des boutons selon la présence d'un token
   const updateAuthButtons = () => {
     const token = localStorage.getItem("token");
     if (token) {
@@ -30,16 +30,20 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  // Action quand on clique sur "Mon profil"
+  // Gestion du clic sur "Mon Profil"
   if (profileButton) {
     profileButton.addEventListener("click", (e) => {
       e.preventDefault();
       const token = localStorage.getItem("token");
+
+      // ✅ Ne rien faire si on est déjà sur la page profil
+      if (window.location.pathname.includes("profil.html")) return;
+
       redirectTo(token ? "profil.html" : "login.html");
     });
   }
 
-  // Action quand on clique sur "Se connecter"
+  // Gestion du clic sur "Se connecter"
   if (loginButton) {
     loginButton.addEventListener("click", (e) => {
       e.preventDefault();
@@ -48,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Action quand on clique sur "Se déconnecter"
+  // Gestion du clic sur "Se déconnecter"
   if (logoutButton) {
     logoutButton.addEventListener("click", async () => {
       const token = localStorage.getItem("token");
@@ -69,7 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Charge les infos du profil si on est sur profil.html
+  // Chargement du profil utilisateur (uniquement sur profil.html)
   const loadUserProfile = async () => {
     const token = localStorage.getItem("token");
     if (!token) {
@@ -110,6 +114,6 @@ document.addEventListener("DOMContentLoaded", () => {
     loadUserProfile();
   }
 
-  // Met à jour l'affichage des boutons
+  // Mise à jour initiale des boutons d'auth
   updateAuthButtons();
 });
