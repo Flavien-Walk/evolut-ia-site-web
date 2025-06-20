@@ -7,34 +7,85 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/contact.css">
-    <link rel="stylesheet" href="../css/scrollbar.css">
-    <script src="../script/auth.js" defer></script>
+    <link rel="stylesheet" href="/css/contact.css">
+    <link rel="stylesheet" href="/css/scrollbar.css">
+    <!-- Toast CSS -->
+    <style>
+        .toast {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 16px 24px;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            transform: translateX(400px);
+            transition: transform 0.3s ease-in-out;
+            z-index: 10000;
+            max-width: 400px;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .toast.show {
+            transform: translateX(0);
+        }
+        
+        .toast.success {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+        }
+        
+        .toast.error {
+            background: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%);
+        }
+        
+        .toast-content {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .toast-icon {
+            font-size: 20px;
+        }
+        
+        .toast-message {
+            flex: 1;
+        }
+        
+        .toast-close {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            padding: 0;
+            margin-left: 12px;
+        }
+    </style>
+    <script src="/script/auth.js" defer></script>
 </head>
 <body>
     <!-- Header Section modernisé -->
     <header id="main-header">
         <div class="logo">
-            <img src="../images/logo.png" alt="Logo Evolut'IA">
-            
+            <img src="/images/logo.png" alt="Logo Evolut'IA">
         </div>
         <nav>
             <ul>
-                <li><a href="/index.html">Accueil</a></li>
-<li><a href="/html/produit.html">Produits</a></li>
-<li><a href="/html/prix.html">Prix</a></li>
-<li><a href="/html/contact.html">Contact</a></li>
-
+                <li><a href="/">Accueil</a></li>
+                <li><a href="/html/produit.html">Produits</a></li>
+                <li><a href="/html/prix.html">Prix</a></li>
+                <li><a href="/html/contact.html">Contact</a></li>
             </ul>
         </nav>
         <div class="auth-buttons">
-            <button class="connect-btn" id="login-button" onclick="window.location.href='login.html'">
+            <button class="connect-btn" id="login-button" onclick="window.location.href='/html/login.html'">
                 <span>Se connecter</span>
             </button>
-            <button class="profile-btn" id="profile-button" style="display: none;" onclick="window.location.href='/html/profil.html'">
-  <span>Mon Profil</span>
-</button>
-
+            <button class="profile-btn" id="profile-button" style="display: none;" onclick="window.location.href = window.location.origin + '/html/profil.html'">
+                <span>Mon Profil</span>
+            </button>
             <button class="join-btn cta-glow">
                 <span>Essai gratuit</span>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
@@ -105,7 +156,7 @@
                     <p>Décrivez-nous votre projet et nous vous recontacterons rapidement avec une solution adaptée.</p>
                 </div>
                 
-                <form action="#" method="post" class="contact-form" id="contact-form">
+                <form class="contact-form" id="contact-form">
                     <div class="form-row">
                         <div class="form-group">
                             <label for="name">Nom complet *</label>
@@ -144,7 +195,6 @@
                     <div class="form-group full-width">
                         <label for="message">Message *</label>
                         <textarea id="message" name="message" rows="6" placeholder="Décrivez votre projet, vos besoins ou votre question..." required></textarea>
-                       
                     </div>
                     
                     <div class="form-footer">
@@ -246,7 +296,7 @@
             <div class="social-cards">
                 <a href="#" class="social-card instagram" target="_blank">
                     <div class="social-icon">
-                        <img src="../images/instagram.png" alt="Instagram">
+                        <img src="/images/instagram.png" alt="Instagram">
                     </div>
                     <div class="social-content">
                         <h3>Instagram</h3>
@@ -258,7 +308,7 @@
                 
                 <a href="#" class="social-card linkedin" target="_blank">
                     <div class="social-icon">
-                        <img src="../images/link.png" alt="LinkedIn">
+                        <img src="/images/link.png" alt="LinkedIn">
                     </div>
                     <div class="social-content">
                         <h3>LinkedIn</h3>
@@ -270,7 +320,7 @@
                 
                 <a href="#" class="social-card tiktok" target="_blank">
                     <div class="social-icon">
-                        <img src="../images/TIK.png" alt="TikTok">
+                        <img src="/images/TIK.png" alt="TikTok">
                     </div>
                     <div class="social-content">
                         <h3>TikTok</h3>
@@ -327,8 +377,8 @@
                 <div class="footer-links">
                     <div class="footer-column">
                         <h4>Solutions</h4>
-                        <a href="produit.html">Tous nos packs</a>
-                        <a href="prix.html">Tarifs</a>
+                        <a href="/html/produit.html">Tous nos packs</a>
+                        <a href="/html/prix.html">Tarifs</a>
                         <a href="#">Essai gratuit</a>
                         <a href="#">Étudiants</a>
                     </div>
@@ -336,7 +386,7 @@
                     <div class="footer-column">
                         <h4>Entreprise</h4>
                         <a href="#">À propos</a>
-                        <a href="contact.html">Contact</a>
+                        <a href="/html/contact.html">Contact</a>
                         <a href="#">Carrières</a>
                         <a href="#">Presse</a>
                     </div>
@@ -371,6 +421,50 @@
     </footer>
 
     <script>
+        // Toast notification system
+        function showToast(message, type = 'info') {
+            const toast = document.createElement('div');
+            toast.className = `toast ${type}`;
+            
+            const icon = type === 'success' ? '✅' : type === 'error' ? '❌' : 'ℹ️';
+            
+            toast.innerHTML = `
+                <div class="toast-content">
+                    <span class="toast-icon">${icon}</span>
+                    <span class="toast-message">${message}</span>
+                    <button class="toast-close" onclick="this.parentElement.parentElement.remove()">×</button>
+                </div>
+            `;
+            
+            document.body.appendChild(toast);
+            
+            // Show toast
+            setTimeout(() => toast.classList.add('show'), 100);
+            
+            // Auto remove after 5 seconds
+            setTimeout(() => {
+                toast.classList.remove('show');
+                setTimeout(() => toast.remove(), 300);
+            }, 5000);
+        }
+
+        // Auth management
+        function checkAuthStatus() {
+            const token = localStorage.getItem('authToken');
+            const loginButton = document.getElementById('login-button');
+            const profileButton = document.getElementById('profile-button');
+            
+            if (token) {
+                // User is authenticated
+                loginButton.style.display = 'none';
+                profileButton.style.display = 'flex';
+            } else {
+                // User is not authenticated
+                loginButton.style.display = 'flex';
+                profileButton.style.display = 'none';
+            }
+        }
+
         // Header scroll effect
         window.addEventListener('scroll', () => {
             const header = document.getElementById('main-header');
@@ -390,38 +484,62 @@
             const submitBtn = contactForm.querySelector('.submit-btn');
             const originalText = submitBtn.querySelector('span').textContent;
             
+            // Get form data
+            const formData = new FormData(contactForm);
+            const data = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                phone: formData.get('phone'),
+                subject: formData.get('subject'),
+                message: formData.get('message')
+            };
+            
             // Loading state
             submitBtn.classList.add('loading');
             submitBtn.querySelector('span').textContent = 'Envoi en cours...';
             submitBtn.disabled = true;
             
-            // Simulate form submission
-            setTimeout(() => {
-                // Success state
+            try {
+                const response = await fetch('https://evolutia-back.onrender.com/contact', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data)
+                });
+                
+                if (response.ok) {
+                    // Success
+                    submitBtn.classList.remove('loading');
+                    submitBtn.classList.add('success');
+                    submitBtn.querySelector('span').textContent = 'Message envoyé !';
+                    
+                    showToast('Merci ! Nous vous recontacterons sous 24h.', 'success');
+                    
+                    // Reset form after 3 seconds
+                    setTimeout(() => {
+                        contactForm.reset();
+                        submitBtn.classList.remove('success');
+                        submitBtn.querySelector('span').textContent = originalText;
+                        submitBtn.disabled = false;
+                        
+                        // Remove focus from form fields
+                        document.querySelectorAll('.form-group').forEach(group => {
+                            group.classList.remove('focused');
+                        });
+                    }, 3000);
+                } else {
+                    throw new Error('Erreur lors de l\'envoi du message');
+                }
+            } catch (error) {
+                // Error
                 submitBtn.classList.remove('loading');
-                submitBtn.classList.add('success');
-                submitBtn.querySelector('span').textContent = 'Message envoyé !';
+                submitBtn.querySelector('span').textContent = originalText;
+                submitBtn.disabled = false;
                 
-                // Show success message
-                const successMessage = document.createElement('div');
-                successMessage.className = 'success-message';
-                successMessage.innerHTML = `
-                    <div class="success-content">
-                        <span class="success-icon">✅</span>
-                        <span>Merci ! Nous vous recontacterons sous 24h.</span>
-                    </div>
-                `;
-                contactForm.appendChild(successMessage);
-                
-                // Reset form after 3 seconds
-                setTimeout(() => {
-                    contactForm.reset();
-                    submitBtn.classList.remove('success');
-                    submitBtn.querySelector('span').textContent = originalText;
-                    submitBtn.disabled = false;
-                    successMessage.remove();
-                }, 3000);
-            }, 2000);
+                showToast('Erreur lors de l\'envoi du message. Veuillez réessayer.', 'error');
+                console.error('Contact form error:', error);
+            }
         });
 
         // Form field animations
@@ -446,12 +564,16 @@
 
         // Chat button functionality
         document.querySelector('.chat-btn')?.addEventListener('click', () => {
-            alert('Chat en direct - Fonctionnalité bientôt disponible !');
+            showToast('Chat en direct - Fonctionnalité bientôt disponible !', 'info');
         });
 
         // Appointment button functionality
         document.querySelector('.appointment-btn')?.addEventListener('click', () => {
-            alert('Prise de rendez-vous - Redirection vers Calendly...');
+            showToast('Redirection vers la prise de rendez-vous...', 'info');
+            // You can replace this with actual Calendly integration
+            setTimeout(() => {
+                window.open('https://calendly.com/evolutia', '_blank');
+            }, 1000);
         });
 
         // Floating elements animation
@@ -460,6 +582,9 @@
             floatingElements.forEach((element, index) => {
                 element.style.animationDelay = `${index * 0.5}s`;
             });
+            
+            // Check auth status on page load
+            checkAuthStatus();
         });
 
         // Intersection Observer for animations
@@ -479,6 +604,32 @@
         // Observe sections for animations
         document.querySelectorAll('.contact-section, .quick-faq, .social-section').forEach(section => {
             observer.observe(section);
+        });
+
+        // Newsletter subscription
+        document.querySelector('.newsletter-btn')?.addEventListener('click', (e) => {
+            e.preventDefault();
+            const emailInput = document.querySelector('.newsletter-form input[type="email"]');
+            const email = emailInput.value;
+            
+            if (email && email.includes('@')) {
+                showToast('Merci pour votre inscription à la newsletter !', 'success');
+                emailInput.value = '';
+            } else {
+                showToast('Veuillez saisir une adresse email valide.', 'error');
+            }
+        });
+
+        // CTA buttons functionality
+        document.querySelector('.cta-btn.primary')?.addEventListener('click', () => {
+            window.location.href = '/html/register.html';
+        });
+
+        document.querySelector('.cta-btn.secondary')?.addEventListener('click', () => {
+            showToast('Redirection vers la planification de démo...', 'info');
+            setTimeout(() => {
+                window.open('https://calendly.com/evolutia-demo', '_blank');
+            }, 1000);
         });
     </script>
 </body>
